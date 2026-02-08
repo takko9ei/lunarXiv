@@ -135,37 +135,34 @@
       <div class="footer-content">
         <div class="footer-col">
           <ul>
-            <li><a href="#">About</a></li>
+            <li><a href="#" data-modal="about">About</a></li>
             <li><a href="#">Help</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <ul></ul>
-        </div>
-        <div class="footer-col">
           <ul>
-            <li><a href="#">Copyright</a></li>
+            <li><a href="#" data-modal="copyright">Copyright</a></li>
             <li><a href="#">Privacy Policy</a></li>
           </ul>
         </div>
-        <div class="footer-col footer-right">
+        <div class="footer-col">
           <ul>
-            <li><span class="icon-mock">✉</span> <a href="#">Contact</a></li>
-            <li><span class="icon-mock">➤</span> <a href="#">Subscribe</a></li>
-            <li style="margin-top: 20px">
-              <a href="#">Web Accessibility Assistance</a>
-            </li>
-            <li><a href="#">lunarXiv Operational Status &gt;</a></li>
-            <li style="font-size: 12px; color: #666; margin-top: 5px">
-              Get status notifications via
-              <a href="#" style="text-decoration: underline">email</a> or
-              <a href="#" style="text-decoration: underline">slack</a>
-            </li>
+            <li><a href="#" data-modal="contact">Contact</a></li>
+            <li><span class="icon-mock">➤</span> <a href="#" data-modal="post">Post</a></li>
           </ul>
         </div>
       </div>
     </footer>
 
+    <div id="footer-modal" class="footer-modal" aria-hidden="true">
+      <div class="footer-modal-overlay"></div>
+      <div class="footer-modal-box">
+        <button type="button" class="footer-modal-close" aria-label="Close">&times;</button>
+        <div class="footer-modal-body"></div>
+      </div>
+    </div>
+
     <script src="js/detail.js"></script>
+    <script src="js/footer.js"></script>
   </body>
 </html>
