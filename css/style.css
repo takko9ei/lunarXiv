@@ -750,28 +750,12 @@ footer ul {
   }
 
   .header-search-box button {
-    width: 2.25em;
-    height: 2.25em;
-    padding: 0;
-    font-size: 0;
-    line-height: 0;
-    border-radius: 4px;
-    position: relative;
-  }
-
-  .header-search-box button::before {
-    content: "\1F50E "; /* U+1F50E 放大镜图标 */
-    font-size: 1.25rem;
-    line-height: 1;
-    color: #fff;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    display: none;
   }
 
   .header-menu-btn {
-    display: none;
+    display: flex;
+    flex-shrink: 0;
   }
 }
 
