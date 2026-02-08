@@ -3,32 +3,77 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>论文归档 | Paper Archive</title>
+    <title>Search | Paper Archive</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <header>
-      <nav class="main-nav">
-        <a href="index.html" class="nav-link active">首页</a>
-        <a href="detail.html" class="nav-link">详情</a>
-      </nav>
-      <h1 class="site-title">论文归档</h1>
-      <p class="site-desc">Paper Archive — 学术论文列表与分页展示</p>
-    </header>
+    <div class="header-top">
+      <span>Cornell University</span>
+      <span style="margin-left: auto"
+        >We gratefully acknowledge support from the Simons Foundation.</span
+      >
+    </div>
 
-    <main class="container">
-      <section id="paper-list" class="paper-list" aria-live="polite">
+    <div class="header-bottom">
+      <a href="index.html" class="logo">arXiv</a>
+      <div class="header-search-box">
+        <input type="text" placeholder="Search..." size="30" />
+        <button>Search</button>
+      </div>
+    </div>
+
+    <div class="main-container">
+      <h1 class="page-title" id="page-title">
+        Showing 1–10 of <span id="total-count">0</span> results
+      </h1>
+
+      <div class="pagination" id="pagination">
+        <!-- 由 main.js 渲染 -->
+      </div>
+
+      <ol class="results-list" id="paper-list" start="1">
         <!-- 由 main.js 动态渲染 -->
-        <p class="loading">正在加载论文列表…</p>
-      </section>
+        <li class="loading">正在加载论文列表…</li>
+      </ol>
 
-      <nav class="pagination" id="pagination" aria-label="分页导航">
-        <!-- 由 main.js 渲染：Previous / Page x of y / Next -->
-      </nav>
-    </main>
+      <div class="pagination" id="pagination-bottom" style="justify-content: center; margin-top: 40px">
+        <!-- 由 main.js 同步渲染 -->
+      </div>
+    </div>
 
     <footer>
-      <p>&copy; 2026 · lunarXiv · ameato9ei</p>
+      <div class="footer-content">
+        <div class="footer-col">
+          <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Help</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <ul></ul>
+        </div>
+        <div class="footer-col">
+          <ul>
+            <li><a href="#">Copyright</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="footer-col footer-right">
+          <ul>
+            <li><span class="icon-mock">✉</span> <a href="#">Contact</a></li>
+            <li><span class="icon-mock">➤</span> <a href="#">Subscribe</a></li>
+            <li style="margin-top: 20px">
+              <a href="#">Web Accessibility Assistance</a>
+            </li>
+            <li><a href="#">arXiv Operational Status &gt;</a></li>
+            <li style="font-size: 12px; color: #666; margin-top: 5px">
+              Get status notifications via
+              <a href="#" style="text-decoration: underline">email</a> or
+              <a href="#" style="text-decoration: underline">slack</a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </footer>
 
     <script src="js/main.js"></script>

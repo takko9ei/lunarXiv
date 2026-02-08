@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search | arXiv e-print repository</title>
+    <style>
+      /* 全局重置 */
+      body {
+        font-family:
+          "Lucida Sans Unicode", "Lucida Grande", Arial, Helvetica, sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #000;
+        background-color: #fff;
+        line-height: 1.4;
+      }
+
+      a {
+        text-decoration: none;
+        color: #0000ff; /* 传统的蓝色链接 */
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      /* --- 1. 顶部 Header 修正 (上黑下红) --- */
+      .header-top {
+        background-color: #222; /* 黑色 Cornell banner */
+        color: white;
+        padding: 5px 15px;
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+        height: 30px;
+      }
+
+      .header-top img {
+        height: 20px; /* 模拟 Cornell Logo */
+        margin-right: 10px;
+      }
+
+      .header-bottom {
+        background-color: #b31b1b; /* arXiv 红色 */
+        color: white;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 50px;
+      }
+
+      .logo {
+        font-size: 32px;
+        font-weight: bold;
+        color: white;
+        letter-spacing: -1px;
+      }
+
+      .header-search-box {
+        display: flex;
+        gap: 5px;
+      }
+
+      .header-search-box input {
+        padding: 5px;
+        border: none;
+        border-radius: 2px;
+      }
+
+      .header-search-box button {
+        background-color: #eee;
+        border: none;
+        padding: 5px 10px;
+        cursor: pointer;
+      }
+
+      /* --- 主体内容 --- */
+      .main-container {
+        max-width: 1000px; /* 限制宽度以模仿原版布局 */
+        margin: 0 auto; /* 居中 */
+        padding: 20px;
+      }
+
+      h1.page-title {
+        font-weight: normal;
+        font-size: 22px;
+        margin-bottom: 20px;
+      }
+
+      /* --- 搜索栏 --- */
+      .search-controls {
+        background-color: #f8f8f8;
+        padding: 15px;
+        border-radius: 4px;
+        margin-bottom: 20px;
+        border: 1px solid #ddd;
+      }
+
+      .main-search-input {
+        width: 100%;
+        padding: 8px;
+        font-size: 16px;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+      }
+
+      /* --- 翻页 Pagination --- */
+      .pagination {
+        display: flex;
+        align-items: center;
+        margin: 20px 0;
+        font-size: 14px;
+      }
+
+      .pagination-list {
+        list-style: none;
+        padding: 0;
+        margin: 0 20px 0 0;
+        display: flex;
+        gap: 5px;
+      }
+
+      .page-link {
+        padding: 5px 10px;
+        border: 1px solid #ccc;
+        color: #333;
+        border-radius: 3px;
+      }
+
+      .page-link.active {
+        background-color: #0055aa;
+        color: white;
+        border-color: #0055aa;
+      }
+
+      .page-link:hover:not(.active) {
+        background-color: #eee;
+        text-decoration: none;
+      }
+
+      /* --- 列表项 (核心修改) --- */
+      .results-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      .result-item {
+        /* 6. 去除横线，仅使用 margin 隔开 */
+        margin-bottom: 30px;
+        padding-bottom: 0;
+      }
+
+      /* 第一行：ID + 链接 + Tag */
+      .list-identifier {
+        margin-bottom: 4px;
+        font-size: 15px;
+      }
+
+      .arxiv-id-link {
+        font-weight: bold;
+        color: #0000ff; /* 修正链接颜色 */
+      }
+
+      .format-links {
+        font-size: 14px;
+        color: #000;
+      }
+
+      .format-links a {
+        color: #0000ff;
+      }
+
+      /* 4. Tag 位于编号栏后面 */
+      .tag-container {
+        display: inline-block;
+        margin-left: 10px;
+      }
+
+      .tag {
+        background-color: #dbeaf0; /* arXiv tag blue */
+        color: #003366;
+        padding: 2px 6px;
+        font-size: 12px;
+        border-radius: 2px;
+        font-family: monospace;
+        margin-right: 4px;
+      }
+
+      .tag.secondary {
+        background-color: #f0f0f0;
+        color: #666;
+      }
+
+      /* 1. 标题不是超链接 */
+      .list-title {
+        font-size: 18px;
+        font-weight: bold; /* arXiv 标题通常加粗 */
+        color: #000; /* 纯黑 */
+        margin: 5px 0;
+        line-height: 1.2;
+      }
+
+      .list-authors {
+        font-size: 15px;
+        margin-bottom: 8px;
+      }
+
+      .author-name {
+        color: #0000ff;
+      }
+
+      .abstract {
+        font-size: 14px;
+        margin-bottom: 8px;
+        text-align: justify;
+      }
+
+      .abstract-prefix {
+        font-weight: bold;
+      }
+
+      /* 4. 底部提交信息和评论 */
+      .submission-history,
+      .comments {
+        font-size: 12px;
+        color: #000;
+        margin-bottom: 2px;
+      }
+
+      .meta-label {
+        font-weight: bold;
+      }
+
+      /* --- 5. 底部 Footer (仿照截图) --- */
+      footer {
+        background-color: #f3f3f3; /* 浅灰背景 */
+        padding: 30px 20px;
+        margin-top: 50px;
+        border-top: 1px solid #ddd;
+        font-size: 14px;
+      }
+
+      .footer-content {
+        max-width: 1000px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .footer-col {
+        flex: 1;
+      }
+
+      .footer-col ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .footer-col li {
+        margin-bottom: 12px;
+      }
+
+      .footer-col a {
+        color: #333;
+      }
+
+      .footer-right {
+        text-align: left; /* 原图是左对齐的列，但在右侧区域 */
+      }
+
+      .icon-mock {
+        display: inline-block;
+        width: 14px;
+        text-align: center;
+        margin-right: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header-top">
+      <span>Cornell University</span>
+      <span style="margin-left: auto"
+        >We gratefully acknowledge support from the Simons Foundation.</span
+      >
+    </div>
+
+    <div class="header-bottom">
+      <div class="logo">arXiv</div>
+      <div class="header-search-box">
+        <input type="text" placeholder="Search..." size="30" />
+        <button>Search</button>
+      </div>
+    </div>
+
+    <div class="main-container">
+      <h1 class="page-title">
+        Showing 1–50 of 1,935 results for all: <strong>android</strong>
+      </h1>
+
+      <div class="pagination">
+        <ul class="pagination-list">
+          <li><a href="#" class="page-link active">1</a></li>
+          <li><a href="#" class="page-link">2</a></li>
+          <li><a href="#" class="page-link">3</a></li>
+          <li><a href="#" class="page-link">4</a></li>
+          <li><a href="#" class="page-link">5</a></li>
+          <li>...</li>
+        </ul>
+        <a href="#" class="page-link">Next</a>
+      </div>
+
+      <ol class="results-list" start="1">
+        <li class="result-item">
+          <div class="list-identifier">
+            <a href="#" class="arxiv-id-link">arXiv:2602.02058</a>
+            <span class="format-links"
+              >[<a href="#">pdf</a>, <a href="#">ps</a>,
+              <a href="#">other</a>]</span
+            >
+            <div class="tag-container">
+              <span class="tag">cs.AI</span>
+              <span class="tag secondary">cs.LG</span>
+            </div>
+          </div>
+
+          <div class="list-title">
+            深度神经网络在现代工业控制系统中的创新应用研究
+          </div>
+
+          <div class="list-authors">
+            <span class="meta-label">Authors:</span>
+            <a href="#" class="author-name">张三</a>,
+            <a href="#" class="author-name">李四</a>,
+            <a href="#" class="author-name">Bernardo Cornejo Avila</a>,
+            <a href="#" class="author-name">Fabian Schussler</a>
+          </div>
+
+          <p class="abstract">
+            <span class="abstract-prefix">Abstract:</span>
+            自古以来，学术研究的发展始终离不开技术的进步。在当前的工业环境中，如何有效地利用大规模数据进行实时决策成为了一个核心挑战。本文提出了一种全新的多层混合模型，通过结合长短期记忆网络和注意力机制，显著提升了系统在极端环境下的稳定性。通过在多个开源数据集上的广泛测试，我们的实验结果表明，该方案不仅在处理速度上提升了
+            40%，且在识别精度上达到了 98% 的行业领先水平...
+            <a href="#">▽ More</a>
+          </p>
+
+          <div class="submission-history">
+            <span class="meta-label">Submitted</span> 2 February, 2026;
+            <span class="meta-label">originally announced</span> February 2026.
+          </div>
+          <div class="comments">
+            <span class="meta-label">Comments:</span> Proceedings 35th annual
+            conference on Astronomical Data Analysis Software and Systems (ADASS
+            XXXV, Görlitz/Germany, 2025)
+          </div>
+        </li>
+
+        <li class="result-item">
+          <div class="list-identifier">
+            <a href="#" class="arxiv-id-link">arXiv:2602.01957</a>
+            <span class="format-links"
+              >[<a href="#">pdf</a>, <a href="#">ps</a>,
+              <a href="#">other</a>]</span
+            >
+            <div class="tag-container">
+              <span class="tag">cs.CR</span>
+              <span class="tag secondary">q-fin.CP</span>
+            </div>
+          </div>
+
+          <div class="list-title">基于分布式账本技术的跨境支付安全协议分析</div>
+
+          <div class="list-authors">
+            <span class="meta-label">Authors:</span>
+            <a href="#" class="author-name">陈某某</a>,
+            <a href="#" class="author-name">周某</a>,
+            <a href="#" class="author-name">Safwat Hassan</a>
+          </div>
+
+          <p class="abstract">
+            <span class="abstract-prefix">Abstract:</span>
+            随着全球化进程的加速，跨境支付系统的安全性和透明度变得愈发重要。传统的金融中转模式面临着高昂的手续费和冗长的清算周期。本研究旨在通过分析最新的共识算法，评估其在应对中间人攻击和双花攻击时的表现。通过对现有主流平台的流量进行模拟分析，我们发现隐私计算技术可以在不暴露用户敏感信息的前提下，实现高效的合规性审查。本文的研究成果为未来数字货币的国际标准化建设提供了重要的理论支撑...
+            <a href="#">▽ More</a>
+          </p>
+
+          <div class="submission-history">
+            <span class="meta-label">Submitted</span> 2 February, 2026;
+            <span class="meta-label">originally announced</span> February 2026.
+          </div>
+        </li>
+
+        <li class="result-item">
+          <div class="list-identifier">
+            <a href="#" class="arxiv-id-link">arXiv:2602.01888</a>
+            <span class="format-links"
+              >[<a href="#">pdf</a>, <a href="#">other</a>]</span
+            >
+            <div class="tag-container">
+              <span class="tag">cs.CL</span>
+            </div>
+          </div>
+
+          <div class="list-title">
+            大语言模型在低资源语言翻译中的少样本学习能力评估
+          </div>
+
+          <div class="list-authors">
+            <span class="meta-label">Authors:</span>
+            <a href="#" class="author-name">王五</a>,
+            <a href="#" class="author-name">赵六</a>,
+            <a href="#" class="author-name">Emily Bender (fictional)</a>
+          </div>
+
+          <p class="abstract">
+            <span class="abstract-prefix">Abstract:</span>
+            尽管大语言模型（LLM）在主流语言任务上表现出色，但在缺乏训练数据的低资源语言中，其性能往往大幅下降。本文构建了一个包含五十种濒危语言的评估基准，系统测试了当前最先进模型在少样本（Few-shot）甚至零样本（Zero-shot）设定下的翻译能力。研究发现，通过思维链（Chain-of-Thought）提示工程，可以显著激活模型潜在的跨语言对齐能力。这一发现对于保护语言多样性和消除数字鸿沟具有深远的社会意义。
+            <a href="#">▽ More</a>
+          </p>
+
+          <div class="submission-history">
+            <span class="meta-label">Submitted</span> 1 February, 2026;
+            <span class="meta-label">originally announced</span> February 2026.
+          </div>
+          <div class="comments">
+            <span class="meta-label">Comments:</span> Accepted to ACL 2026
+          </div>
+        </li>
+
+        <li class="result-item">
+          <div class="list-identifier">
+            <a href="#" class="arxiv-id-link">arXiv:2601.12345</a>
+            <span class="format-links"
+              >[<a href="#">pdf</a>, <a href="#">ps</a>,
+              <a href="#">other</a>]</span
+            >
+            <div class="tag-container">
+              <span class="tag">quant-ph</span>
+              <span class="tag secondary">phy.QI</span>
+            </div>
+          </div>
+
+          <div class="list-title">
+            室温超导材料的量子纠缠特性与其在量子计算中的应用前景
+          </div>
+
+          <div class="list-authors">
+            <span class="meta-label">Authors:</span>
+            <a href="#" class="author-name">钱学森 (致敬)</a>,
+            <a href="#" class="author-name">Alice Bob</a>,
+            <a href="#" class="author-name">Eve Mallroy</a>
+          </div>
+
+          <p class="abstract">
+            <span class="abstract-prefix">Abstract:</span>
+            量子计算的物理实现长期受制于低温环境的苛刻要求。近期在室温超导材料领域的突破性进展为这一难题提供了新的解决思路。本文通过理论推导与数值模拟，探讨了新型合成材料在常温下的量子比特相干时间。结果显示，该材料能够维持长达微秒级的纠缠状态，这为构建可扩展的量子处理器奠定了物理基础。我们还提出了一种基于该材料的全新逻辑门架构，有望将量子计算机的体积缩小至目前的十分之一。
+            <a href="#">▽ More</a>
+          </p>
+
+          <div class="submission-history">
+            <span class="meta-label">Submitted</span> 30 January, 2026;
+            <span class="meta-label">originally announced</span> January 2026.
+          </div>
+        </li>
+      </ol>
+
+      <div class="pagination" style="justify-content: center; margin-top: 40px">
+        <ul class="pagination-list">
+          <li><a href="#" class="page-link active">1</a></li>
+          <li><a href="#" class="page-link">2</a></li>
+          <li><a href="#" class="page-link">3</a></li>
+          <li><a href="#" class="page-link">4</a></li>
+          <li><a href="#" class="page-link">5</a></li>
+          <li>...</li>
+        </ul>
+        <a href="#" class="page-link">Next</a>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-col">
+          <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Help</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <ul></ul>
+        </div>
+
+        <div class="footer-col">
+          <ul>
+            <li><a href="#">Copyright</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-right">
+          <ul>
+            <li><span class="icon-mock">✉</span> <a href="#">Contact</a></li>
+            <li><span class="icon-mock">➤</span> <a href="#">Subscribe</a></li>
+            <li style="margin-top: 20px">
+              <a href="#">Web Accessibility Assistance</a>
+            </li>
+            <li><a href="#">arXiv Operational Status ></a></li>
+            <li style="font-size: 12px; color: #666; margin-top: 5px">
+              Get status notifications via
+              <a href="#" style="text-decoration: underline">email</a> or
+              <a href="#" style="text-decoration: underline">slack</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

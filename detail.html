@@ -3,30 +3,132 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>论文详情 | Paper Archive</title>
+    <title>Paper Detail | Paper Archive</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <header>
-      <nav class="main-nav">
-        <a href="index.html" class="nav-link">首页</a>
-        <a href="detail.html" class="nav-link active">详情</a>
-      </nav>
-      <h1 class="site-title">论文详情</h1>
-    </header>
+    <div class="header-top">
+      <span>Cornell University</span>
+      <span style="margin-left: auto"
+        >We gratefully acknowledge support from the Simons Foundation.</span
+      >
+    </div>
 
-    <main class="container">
-      <article id="paper-detail" class="paper-detail" aria-live="polite">
-        <!-- 由 detail.js 根据 ?id=xxx 填充，或显示 Paper not found -->
-        <p class="loading">正在加载论文信息…</p>
-      </article>
-      <p class="back-link-wrap">
-        <a href="index.html" class="back-link">← 返回列表</a>
-      </p>
-    </main>
+    <div class="header-bottom">
+      <a href="index.html" class="logo">arXiv</a>
+      <div class="header-search-box">
+        <input type="text" placeholder="Search..." size="30" />
+        <button>Search</button>
+      </div>
+    </div>
+
+    <div class="content-wrapper">
+      <div class="main-column">
+        <div id="paper-detail" class="paper-detail-inner" aria-live="polite">
+          <!-- 由 detail.js 填充：breadcrumb、标题、作者、摘要、元数据、Submission history；或 Paper not found -->
+          <p class="loading">正在加载论文信息…</p>
+        </div>
+      </div>
+
+      <div class="sidebar">
+        <div class="sidebar-box">
+          <div class="sidebar-header">Access Paper:</div>
+          <ul class="access-paper-list">
+            <li><a href="#" class="download-btn" id="sidebar-download-pdf">Download PDF</a></li>
+            <li><a href="#" class="download-btn">Other Formats</a></li>
+          </ul>
+          <div style="margin-top: 10px; font-size: 13px">
+            <a href="#">(view license)</a>
+          </div>
+        </div>
+
+        <div class="sidebar-box">
+          <div class="sidebar-header">Current Browse Context</div>
+          <div class="browse-context">
+            <div><strong>cs.CL</strong></div>
+            <div class="browse-nav">
+              <a href="#">&lt; prev</a> <span>|</span> <a href="#">next &gt;</a>
+            </div>
+            <div>
+              <a href="index.html">new</a> | <a href="index.html">recent</a> |
+              <a href="#">2602</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-box">
+          <div class="sidebar-header">Change to browse scope</div>
+          <div class="browse-context">
+            <div style="margin-bottom: 3px"><a href="#">cs</a></div>
+            <div style="margin-bottom: 3px"><a href="#">cs.AI</a></div>
+            <div style="margin-bottom: 3px"><a href="#">cs.LG</a></div>
+          </div>
+        </div>
+
+        <div class="sidebar-box">
+          <div class="sidebar-header">References &amp; Citations</div>
+          <ul class="access-paper-list" style="font-size: 13px">
+            <li><a href="#">NASA ADS</a></li>
+            <li><a href="#">Google Scholar</a></li>
+            <li><a href="#">Semantic Scholar</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-box">
+          <div class="sidebar-header">Bibliographic Tools</div>
+          <div style="font-size: 13px">
+            <a href="#">Export BibTeX Citation</a>
+          </div>
+          <div style="font-size: 13px; margin-top: 5px">
+            <a href="#">Bookmark</a>
+          </div>
+        </div>
+
+        <div class="sidebar-box">
+          <div class="sidebar-header">
+            arXivLabs: experimental projects with community collaborators
+          </div>
+          <div style="font-size: 12px; color: #666; margin-top: 5px">
+            arXivLabs is a framework that allows collaborators to develop and
+            share new arXiv features directly on our website.
+          </div>
+        </div>
+      </div>
+    </div>
 
     <footer>
-      <p>&copy; 2026 · lunarXiv · ameato9ei</p>
+      <div class="footer-content">
+        <div class="footer-col">
+          <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Help</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <ul></ul>
+        </div>
+        <div class="footer-col">
+          <ul>
+            <li><a href="#">Copyright</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="footer-col footer-right">
+          <ul>
+            <li><span class="icon-mock">✉</span> <a href="#">Contact</a></li>
+            <li><span class="icon-mock">➤</span> <a href="#">Subscribe</a></li>
+            <li style="margin-top: 20px">
+              <a href="#">Web Accessibility Assistance</a>
+            </li>
+            <li><a href="#">arXiv Operational Status &gt;</a></li>
+            <li style="font-size: 12px; color: #666; margin-top: 5px">
+              Get status notifications via
+              <a href="#" style="text-decoration: underline">email</a> or
+              <a href="#" style="text-decoration: underline">slack</a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </footer>
 
     <script src="js/detail.js"></script>
