@@ -10,9 +10,10 @@
   const contents = {
     about:
       "<p>这是一件《超时空辉夜姬》的粉丝作品，由 ameato9ei 编写。</p>" +
+      "<p>除了酒寄彩叶外的所有名字皆为随意杜撰，与原著或真实人物无关。</p>" +
       "<p>请注意，本站发表的所有文章、研究数据及结论均为创作或想象产物，并非真实的科学研究报告。本站及站内内容与现实世界中任何真实的学术机构、政府团体、公司或科研组织均无任何关联。请读者务必注意区分虚构内容与现实科学。</p>" +
       "<p>特别注意，如果你看到这，请举起双臂高呼三声彩辉99。</p>" +
-      "<p>GitHub 仓库地址：<a href=\"https://github.com/takko9ei/lunarXiv\" target=\"_blank\" rel=\"noopener\">https://github.com/takko9ei/lunarXiv</a></p>",
+      '<p>GitHub 仓库地址：<a href="https://github.com/takko9ei/lunarXiv" target="_blank" rel="noopener">https://github.com/takko9ei/lunarXiv</a></p>',
     copyright: "<p>2026 · 「超かぐや姫！」fanwork by ameato9ei</p>",
     contact:
       "<p>Contact me:</p>" +
@@ -20,7 +21,7 @@
     post:
       "<p>如果你想投稿…</p>" +
       "<p>请把（伪）论文写好、排版后，在邮件里发给我，我审核后发布！</p>" +
-      "<p>邮箱：<a href=\"mailto:lzh310@outlook.com\">lzh310@outlook.com</a></p>",
+      '<p>邮箱：<a href="mailto:lzh310@outlook.com">lzh310@outlook.com</a></p>',
   };
 
   function openModal(id) {
@@ -52,11 +53,16 @@
       });
     });
 
-    modal.querySelector(".footer-modal-close").addEventListener("click", closeModal);
-    modal.querySelector(".footer-modal-overlay").addEventListener("click", closeModal);
+    modal
+      .querySelector(".footer-modal-close")
+      .addEventListener("click", closeModal);
+    modal
+      .querySelector(".footer-modal-overlay")
+      .addEventListener("click", closeModal);
 
     document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape" && modal.classList.contains("is-open")) closeModal();
+      if (e.key === "Escape" && modal.classList.contains("is-open"))
+        closeModal();
     });
   }
 
