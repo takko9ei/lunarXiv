@@ -102,12 +102,17 @@ img {
   min-height: 60px;
   border-bottom: 2px solid #ccc;
   position: relative;
-  overflow: auto;
+  overflow: hidden;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  align-content: center;
   gap: 0;
   box-sizing: border-box;
+}
+
+.header-bottom > * {
+  align-self: center;
 }
 
 /* 宽屏（两栏都出现）时黑条与红条等高 */
@@ -117,6 +122,7 @@ img {
     min-height: 60px;
     height: 60px;
     align-items: center;
+    align-content: center;
   }
 }
 
@@ -131,6 +137,7 @@ img {
   display: inline-flex;
   align-items: center;
   text-decoration: none;
+  line-height: 1;
 }
 
 .header-bottom a.logo:hover {
@@ -147,9 +154,11 @@ img {
 }
 
 .logo-word {
-  font-family: "Larabiefont", "Larabie", "Lucida Grande", helvetica, arial, sans-serif;
+  font-family:
+    "Larabiefont", "Larabie", "Lucida Grande", helvetica, arial, sans-serif;
   font-weight: bold;
   color: inherit;
+  line-height: 1;
 }
 
 .logo-img {
@@ -710,7 +719,8 @@ footer ul {
 }
 
 /****************************************
- *  Responsive: 768px 平板 — 黑条消失，红条内 arXiv | 竖线 | 校徽+校名
+ *  Responsive: 768px 平板 — 黑条消失，红条内 logo | 竖线 | 校徽+校名
+ *  黑条消失断点：视口宽度 ≤768px 时 .header-top 隐藏（见下）
  *  参考: .mobile-header 显示、#cu-identity 在实站被隐藏
  ****************************************/
 @media screen and (max-width: 768px) {
@@ -732,6 +742,32 @@ footer ul {
 
   .header-search-box {
     margin-left: auto;
+  }
+
+  /* 黑条消失时：搜索栏改为仅放大镜图标 */
+  .header-search-box input {
+    display: none;
+  }
+
+  .header-search-box button {
+    width: 2.25em;
+    height: 2.25em;
+    padding: 0;
+    font-size: 0;
+    line-height: 0;
+    border-radius: 4px;
+    position: relative;
+  }
+
+  .header-search-box button::before {
+    content: "\1F50E "; /* U+1F50E 放大镜图标 */
+    font-size: 1.25rem;
+    line-height: 1;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
   .header-menu-btn {
