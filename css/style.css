@@ -459,10 +459,11 @@ h1.page-title {
  ****************************************/
 .content-wrapper {
   margin: -0.7em;
+  margin-top: 0;
   max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
-  padding: 0 20px;
+  padding: 1.5em 20px 0;
   overflow: auto; /* contain floats */
 }
 
@@ -521,12 +522,12 @@ h1.paper-title {
   color: #333;
 }
 
-/* abs.css #abs blockquote.abstract */
+/* abs.css #abs blockquote.abstract；左端与标题、作者对齐（20px），背景透明 */
 .abstract-block {
   font-size: 1.05em;
   line-height: 1.55;
-  margin: 14px 40px 21px 40px;
-  background-color: white;
+  margin: 14px 20px 21px 20px;
+  background-color: transparent;
   border: none;
   padding: 0;
 }
@@ -587,7 +588,7 @@ h1.paper-title {
 .access-paper-list {
   list-style: none;
   padding: 0;
-  margin: 0.3em 0 0 1em;
+  margin: 0.3em 0 0 0;
 }
 
 .access-paper-list li {
@@ -830,7 +831,7 @@ footer ul {
   }
 
   .content-wrapper {
-    padding: 0 0.5em;
+    padding: 1.5em 0.5em 0;
   }
 
   .abstract-block {
@@ -869,7 +870,7 @@ footer ul {
   /* Detail: abs-outer mobile */
   .content-wrapper {
     margin: 0;
-    padding: 0 1em;
+    padding: 1.5em 1em 0;
     flex-direction: column;
     display: block;
   }
@@ -918,7 +919,7 @@ footer ul {
   }
 
   .abstract-block {
-    margin: 0 1em;
+    margin: 0.5em 1em 1em 0.5em;
   }
 
   .metatable {
