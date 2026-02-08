@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search | Paper Archive</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- 桌面：黑条 + 红条；平板/手机：仅红条，布局由 CSS 控制 -->
+    <div class="header-top">
+      <div class="header-top-left">
+        <img
+          src="assets/image/university-logo.png"
+          alt=""
+          class="header-crest"
+        />
+        <span class="header-school-name">Yachiyo University</span>
+      </div>
+      <span class="header-top-right"
+        >We gratefully acknowledge support from the Asahi Foundation.</span
+      >
+    </div>
+
+    <div class="header-bottom">
+      <a href="index.html" class="logo">lunarXiv</a>
+      <span class="header-divider" aria-hidden="true"></span>
+      <div class="header-university">
+        <img
+          src="assets/image/university-logo.png"
+          alt=""
+          class="header-crest-inline"
+        />
+        <span class="header-university-name">Yachiyo University</span>
+      </div>
+      <div class="header-search-box">
+        <input type="text" placeholder="Search..." size="30" />
+        <button type="submit">Search</button>
+      </div>
+      <a href="#" class="header-menu-btn" aria-label="Menu">☰</a>
+    </div>
+
+    <div class="main-container">
+      <h1 class="page-title" id="page-title">
+        Showing 1–10 of <span id="total-count">0</span> results
+      </h1>
+
+      <div class="pagination" id="pagination">
+        <!-- 由 main.js 渲染 -->
+      </div>
+
+      <ol class="results-list" id="paper-list" start="1">
+        <!-- 由 main.js 动态渲染 -->
+        <li class="loading">正在加载论文列表…</li>
+      </ol>
+
+      <div
+        class="pagination"
+        id="pagination-bottom"
+        style="justify-content: center; margin-top: 40px"
+      >
+        <!-- 由 main.js 同步渲染 -->
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-col">
+          <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Help</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <ul></ul>
+        </div>
+        <div class="footer-col">
+          <ul>
+            <li><a href="#">Copyright</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="footer-col footer-right">
+          <ul>
+            <li><span class="icon-mock">✉</span> <a href="#">Contact</a></li>
+            <li><span class="icon-mock">➤</span> <a href="#">Subscribe</a></li>
+            <li style="margin-top: 20px">
+              <a href="#">Web Accessibility Assistance</a>
+            </li>
+            <li><a href="#">arXiv Operational Status &gt;</a></li>
+            <li style="font-size: 12px; color: #666; margin-top: 5px">
+              Get status notifications via
+              <a href="#" style="text-decoration: underline">email</a> or
+              <a href="#" style="text-decoration: underline">slack</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

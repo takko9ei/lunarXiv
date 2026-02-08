@@ -1,0 +1,917 @@
+/****************************************
+ * 论文归档站 · 样式对齐 .stylereference
+ * 参考: arXiv.css, browse_search.css, abs.css, arXiv-print.css
+ ****************************************/
+
+/****************************************
+ *  General (arXiv.css)
+ ****************************************/
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  color: #000;
+  font-family: "Lucida Grande", helvetica, arial, verdana, sans-serif;
+  line-height: 1.4;
+}
+
+a:link,
+a:visited,
+a:active {
+  text-decoration: none;
+  font-weight: normal;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  border: 0;
+}
+
+/****************************************
+ *  Cornell Identity / 顶部黑条 (桌面约 73px，徽标与校名更大)
+ *  参考: #cu-identity, #cu-logo, #insignia-link 等
+ ****************************************/
+.header-top {
+  font-family: verdana, arial, helvetica, sans-serif;
+  color: #fff;
+  background-color: #222;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  min-height: 60px;
+  box-sizing: border-box;
+}
+
+.header-top-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header-top-right {
+  margin-left: auto;
+  font-size: 0.9rem;
+  font-weight: normal;
+  text-align: right;
+}
+
+/* 桌面黑条内徽标与校名更大 */
+.header-crest {
+  height: 50px;
+  width: auto;
+  display: block;
+}
+
+.header-school-name {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 1.35em;
+  font-weight: normal;
+}
+
+/****************************************
+ *  arXiv Masthead / 红色条 (arXiv.css #header, .mobile-header)
+ ****************************************/
+.header-bottom {
+  background-color: #b31b1b;
+  color: #fff;
+  margin: 0;
+  padding: 10px 20px;
+  min-height: 60px;
+  border-bottom: 2px solid #ccc;
+  position: relative;
+  overflow: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0;
+  box-sizing: border-box;
+}
+
+/* 宽屏（两栏都出现）时黑条与红条等高 */
+@media screen and (min-width: 769px) {
+  .header-top,
+  .header-bottom {
+    min-height: 60px;
+    height: 60px;
+    align-items: center;
+  }
+}
+
+.header-bottom .logo {
+  margin: 0;
+  font-size: 2em;
+  font-weight: bold;
+  font-style: normal;
+  color: #fff;
+  letter-spacing: -1px;
+  flex-shrink: 0;
+}
+
+.header-bottom a.logo:hover {
+  text-decoration: none;
+  opacity: 0.9;
+}
+
+/* 竖向分割线：平板时在 arXiv 与校徽校名之间显示 */
+.header-divider {
+  display: none;
+  width: 0;
+  height: 44px;
+  border-left: 1px solid #fc5554;
+  border-right: 1px solid #731515;
+  margin: 0 1em;
+  flex-shrink: 0;
+}
+
+/* 红条内校徽+校名：平板显示，手机仅校徽 */
+.header-university {
+  display: none;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.header-crest-inline {
+  height: 45px;
+  width: auto;
+  display: block;
+}
+
+.header-university-name {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 1rem;
+  color: #fff;
+  white-space: nowrap;
+}
+
+/* Masthead Search (browse_search.css + arXiv #header form) */
+.header-search-box {
+  display: flex;
+  justify-content: flex-end;
+  margin-left: auto;
+  padding: 0;
+  font-size: 0.8em;
+  line-height: 100%;
+  flex-shrink: 0;
+}
+
+.header-search-box input,
+.header-search-box select {
+  margin: 0;
+  padding: 0 0.5em;
+}
+
+.header-search-box input {
+  font-size: 12px;
+  line-height: 1.5;
+  height: 2.25em;
+  border-radius: 2px;
+  border: 1px solid #95989a;
+  box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.1);
+  width: 200px;
+  max-width: 100%;
+}
+
+.header-search-box button {
+  font-size: 12px;
+  line-height: 1.5;
+  height: 2.25em;
+  border-radius: 2px;
+  border: 1px solid #95989a;
+  background-color: #711111;
+  color: #fff;
+  padding: 0 0.5em;
+  cursor: pointer;
+  margin-left: 0;
+}
+
+.header-search-box button:hover,
+.header-search-box button:focus {
+  background-color: #440a0a;
+  color: #fff;
+}
+
+/* 菜单按钮：仅手机显示 */
+.header-menu-btn {
+  display: none;
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 0.25em 0.4em;
+  line-height: 1;
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-menu-btn:hover {
+  text-decoration: none;
+  opacity: 0.9;
+}
+
+/****************************************
+ *  Main content (arXiv.css #content)
+ ****************************************/
+.main-container {
+  margin: 0.7em;
+  font-size: 90%;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+}
+
+h1.page-title {
+  font-weight: normal;
+  font-size: 22px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/****************************************
+ *  Pagination
+ ****************************************/
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+  font-size: 14px;
+}
+
+.pagination-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 20px 0 0;
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.page-link {
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  color: #333;
+  border-radius: 3px;
+}
+
+.page-link.active {
+  background-color: #0055aa;
+  color: white;
+  border-color: #0055aa;
+}
+
+.page-link:hover:not(.active) {
+  background-color: #eee;
+  text-decoration: none;
+}
+
+.pagination .page-link.disabled {
+  pointer-events: none;
+  background-color: #e0e0e0;
+  color: #999;
+}
+
+/****************************************
+ *  List / dlpage (arXiv.css #dlpage)
+ ****************************************/
+.results-list {
+  list-style: none;
+  padding: 0;
+}
+
+.result-item {
+  margin-bottom: 30px;
+  padding-bottom: 0;
+}
+
+.list-identifier {
+  margin-bottom: 4px;
+  font-size: 15px;
+}
+
+.list-identifier a,
+.arxiv-id-link {
+  font-weight: bold;
+  color: #0000ff;
+}
+
+.format-links {
+  font-size: 14px;
+  color: #000;
+}
+
+.format-links a {
+  color: #0000ff;
+}
+
+.tag-container {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.tag {
+  background-color: #dbeaf0;
+  color: #003366;
+  padding: 2px 6px;
+  font-size: 12px;
+  border-radius: 2px;
+  font-family: monospace;
+  margin-right: 4px;
+}
+
+.tag.secondary {
+  background-color: #f0f0f0;
+  color: #666;
+}
+
+.list-title {
+  font-size: large;
+  font-weight: bold;
+  margin: 0.25em 0 0 0;
+  line-height: 120%;
+}
+
+.list-authors {
+  font-weight: normal;
+  font-size: 110%;
+}
+
+.author-name {
+  color: #0000ff;
+}
+
+.abstract {
+  font-size: 14px;
+  margin-bottom: 8px;
+  text-align: justify;
+}
+
+.abstract-prefix {
+  font-weight: bold;
+}
+
+.submission-history,
+.comments {
+  font-weight: normal;
+  font-size: 90%;
+  color: #000;
+  margin-bottom: 2px;
+}
+
+.meta-label {
+  font-weight: bold;
+}
+
+/* Loading / error */
+.loading {
+  font-style: italic;
+  color: #555;
+  margin: 1rem 0;
+}
+
+.paper-not-found {
+  text-align: center;
+  padding: 2rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: #f8f8f8;
+}
+
+.paper-not-found h2 {
+  font-size: 20px;
+  color: #b31b1b;
+  margin: 0 0 0.75rem 0;
+}
+
+.paper-not-found p {
+  margin: 0 0 1rem 0;
+  color: #333;
+}
+
+.paper-not-found a {
+  color: #0000ff;
+}
+
+/****************************************
+ *  Detail / abs 布局 (arXiv.css #abs-outer, abs.css)
+ ****************************************/
+.content-wrapper {
+  margin: -0.7em;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
+  overflow: auto; /* contain floats */
+}
+
+.main-column {
+  margin: 0 0 1em 0;
+  padding: 0;
+  width: calc(100% - 18em);
+  float: left;
+  min-width: 0;
+}
+
+/* 侧栏 extra-services (arXiv.css .extra-services) */
+.sidebar {
+  float: right;
+  margin: 0;
+  width: 18em;
+  font-size: 14px;
+  border-left: 0.35em solid #ddd;
+  padding-left: 0.5em;
+}
+
+.header-breadcrumbs {
+  font-size: 14px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* abs.css #abs h1.title */
+h1.paper-title {
+  display: block;
+  font-size: 1.8em !important;
+  font-weight: 700;
+  margin: 12px 0 12px 20px;
+  line-height: 120%;
+}
+
+.title-prefix {
+  font-variant: small-caps;
+  color: #333;
+  font-weight: normal;
+}
+
+/* abs.css #abs .authors */
+.detail-authors {
+  font-size: 1.2em;
+  line-height: 24px;
+  margin: 8px 0 8px 20px;
+}
+
+.detail-authors a {
+  font-size: medium;
+}
+
+.authors-prefix {
+  font-variant: small-caps;
+  color: #333;
+}
+
+/* abs.css #abs blockquote.abstract */
+.abstract-block {
+  font-size: 1.05em;
+  line-height: 1.55;
+  margin: 14px 40px 21px 40px;
+  background-color: white;
+  border: none;
+  padding: 0;
+}
+
+.abstract-block .abstract-prefix {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.abstract-text {
+  text-align: justify;
+}
+
+/* abs.css #abs .metatable, .tablecell */
+.metatable {
+  font-size: 0.95em !important;
+  line-height: 1.5;
+  margin: 0 0 1.5em 20px;
+  width: 100%;
+  border-spacing: 0;
+}
+
+.metatable td {
+  padding: 0.1em 0.5em 0 0;
+  vertical-align: top;
+}
+
+.table-label {
+  font-weight: 400 !important;
+  color: #333;
+  white-space: nowrap;
+  text-align: right;
+  width: 100px;
+}
+
+/* Sidebar blocks (arXiv.css .full-text, .browse) */
+.sidebar-box {
+  margin-bottom: 0;
+  padding: 0.5em 1em 0.5em 0;
+  font-size: 90%;
+  border-bottom: medium solid #ddd;
+  border-left: none;
+}
+
+.sidebar-header {
+  font-size: 140%;
+  font-weight: bold;
+  margin: 0.1em 0 0 0;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+  color: #333;
+  text-transform: none;
+  letter-spacing: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.access-paper-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.3em 0 0 1em;
+}
+
+.access-paper-list li {
+  margin-bottom: 8px;
+}
+
+.download-btn {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  display: block;
+  text-decoration: none;
+  color: #333;
+  border-radius: 3px;
+  transition: background 0.2s;
+}
+
+.download-btn:hover {
+  background-color: #f0f0f0;
+  text-decoration: none;
+  border-color: #bbb;
+}
+
+.browse-context {
+  font-size: 13px;
+}
+
+.browse-nav {
+  margin: 5px 0;
+  padding: 0.2em 0 0 0;
+}
+
+.browse-nav span {
+  margin: 0 5px;
+  color: #ccc;
+}
+
+/* Submission history (arXiv.css #abs-outer .submission-history) */
+.submission-history-block {
+  margin: 1.5em 0 1.5em 20px;
+  font-size: 90%;
+  line-height: 1.5em;
+}
+
+.submission-history-block h3 {
+  font-size: 120%;
+  margin: 0 0 0.25em 0;
+  font-weight: bold;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 5px;
+}
+
+.submission-history-block p {
+  font-size: inherit;
+  color: #333;
+  margin: 0;
+  font-family: "Lucida Grande", helvetica, arial, verdana, sans-serif;
+}
+
+/****************************************
+ *  Footer (arXiv.css footer)
+ ****************************************/
+footer {
+  background-color: hsl(0, 0%, 95%);
+  color: #000;
+  padding: 1em 2em;
+  font-size: 0.9rem;
+  -webkit-font-smoothing: antialiased;
+  margin-top: 6rem;
+  border-top: 1px solid #ddd;
+  clear: both;
+  overflow: hidden;
+}
+
+footer a,
+footer a:visited {
+  color: #000;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  line-height: 1.75em;
+}
+
+footer a:hover,
+footer a:active {
+  color: #005e9d;
+  border-bottom: 1px dotted #005e9d;
+  text-decoration: none;
+}
+
+footer ul {
+  padding: 0;
+  margin: 0;
+}
+
+.footer-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-col {
+  flex: 1;
+  min-width: 120px;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col li {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+
+.footer-col a {
+  font-size: 13.5px;
+  color: #000;
+}
+
+.footer-right {
+  text-align: left;
+}
+
+.icon-mock {
+  display: inline-block;
+  width: 14px;
+  text-align: center;
+  margin-right: 5px;
+}
+
+/****************************************
+ *  Responsive: 768px 平板 — 黑条消失，红条内 arXiv | 竖线 | 校徽+校名
+ *  参考: .mobile-header 显示、#cu-identity 在实站被隐藏
+ ****************************************/
+@media screen and (max-width: 768px) {
+  .header-top {
+    display: none !important;
+  }
+
+  .header-bottom {
+    padding: 10px 15px;
+  }
+
+  .header-divider {
+    display: block;
+  }
+
+  .header-university {
+    display: flex;
+  }
+
+  .header-search-box {
+    margin-left: auto;
+  }
+
+  .header-menu-btn {
+    display: none;
+  }
+}
+
+/****************************************
+ *  Responsive: 500px 手机 — 红条仅保留：arXiv | 校徽 | 搜索 | 菜单
+ *  参考: .mobile-header @500px 列高 80px、logo-cornell 校徽、nav 菜单
+ ****************************************/
+@media screen and (max-width: 500px) {
+  .header-bottom {
+    height: 80px;
+    min-height: 80px;
+    align-items: center;
+    padding: 0 0.5em;
+  }
+
+  .header-divider {
+    display: none;
+  }
+
+  /* 仅保留校徽，校名隐藏 */
+  .header-university-name {
+    display: none;
+  }
+
+  .header-university {
+    display: flex;
+  }
+
+  .header-crest-inline {
+    height: 73px;
+  }
+
+  .header-search-box {
+    margin-left: auto;
+  }
+
+  .header-search-box input {
+    width: 120px;
+    max-width: 40vw;
+    font-size: 11px;
+  }
+
+  .header-menu-btn {
+    display: flex;
+    flex-shrink: 0;
+  }
+}
+
+/****************************************
+ *  Responsive: 768px 继续 — 主内容、详情、footer
+ ****************************************/
+@media screen and (max-width: 768px) {
+  .header-bottom .logo {
+    text-align: left;
+  }
+
+  .header-search-box input {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .main-container {
+    margin: 0.7em;
+    padding: 15px 10px;
+  }
+
+  .pagination {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .pagination-list {
+    margin: 0 10px 5px 0;
+  }
+
+  /* Detail: abs-outer mobile */
+  .content-wrapper {
+    margin: 0;
+    padding: 0 1em;
+    flex-direction: column;
+    display: block;
+  }
+
+  .main-column {
+    width: 100%;
+    float: left;
+    margin: 0 0 1em 0;
+  }
+
+  .sidebar {
+    width: 100%;
+    float: left;
+    border-left: 0;
+    padding: 1em 0;
+    margin: 0 0 1em 0;
+    -webkit-box-shadow: inset 0px 8px 15px 0px rgba(173, 173, 173, 1);
+    box-shadow: inset 0px 8px 15px 0px rgba(173, 173, 173, 1);
+    background-color: #e6e6e6;
+  }
+
+  .sidebar-box {
+    border: 0;
+    font-size: 12px;
+    padding: 0.5em 1em;
+  }
+
+  .sidebar-header {
+    font-size: 15px;
+    margin-bottom: 0.5em;
+  }
+
+  .header-breadcrumbs {
+    margin: 0.25em 0 0.5em 1em;
+    font-size: 0.85em;
+  }
+
+  h1.paper-title {
+    margin: 0 0.25em 0 0.5em;
+    font-size: 1.5em;
+  }
+
+  .detail-authors {
+    margin: 1em 0.25em 0 1em;
+    font-size: 0.9em;
+  }
+
+  .abstract-block {
+    margin: 0 1em;
+  }
+
+  .metatable {
+    margin: 0.75em 0 1.5em 1.5em;
+  }
+
+  .submission-history-block {
+    padding: 1em;
+    margin: 0;
+    background-color: #f5f5f5;
+    -webkit-box-shadow: inset 0px -6px 15px 0px rgba(219, 219, 219, 1);
+    box-shadow: inset 0px -6px 15px 0px rgba(219, 219, 219, 1);
+  }
+
+  .submission-history-block h3 {
+    font-size: 1em;
+  }
+
+  /* Mobile download button style (arXiv abs mobile) */
+  .sidebar .download-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.7em 0.25em;
+    border-radius: 10px;
+    background-color: #408bd0;
+    padding: 0.25em 1em;
+    font-weight: 800;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .sidebar .download-btn:hover {
+    background-color: #2a6fb0;
+    color: white;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  footer {
+    margin-top: 3rem;
+    padding: 1em;
+  }
+}
+
+/****************************************
+ *  Responsive: 480px 窄屏
+ ****************************************/
+@media screen and (max-width: 480px) {
+  .main-container {
+    padding: 10px 8px;
+  }
+
+  .list-title {
+    font-size: 1rem;
+  }
+
+  .content-wrapper {
+    padding: 0 0.5em;
+  }
+
+  .abstract-block {
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+  }
+}
+
+/****************************************
+ *  Print (arXiv-print.css)
+ *****************************************/
+@media print {
+  .header-top,
+  .header-search-box,
+  .pagination,
+  #pagination,
+  #pagination-bottom,
+  .sidebar {
+    display: none !important;
+  }
+
+  .main-column {
+    width: 100%;
+  }
+
+  .header-breadcrumbs {
+    font-size: 18px;
+  }
+}
