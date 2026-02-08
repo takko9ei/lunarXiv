@@ -164,8 +164,14 @@ img {
 .logo-img {
   height: 0.9em;
   width: auto;
-  vertical-align: middle;
   display: block;
+}
+
+/* 宽屏（501px 及以上）lunarXiv logo 整体约 1.2 倍大 */
+@media screen and (min-width: 501px) {
+  .header-bottom .logo {
+    font-size: 2.4em;
+  }
 }
 
 /* 竖向分割线：平板时在 arXiv 与校徽校名之间显示 */
@@ -744,7 +750,6 @@ footer ul {
     margin-left: auto;
   }
 
-  /* 黑条消失时：搜索栏改为仅放大镜图标 */
   .header-search-box input {
     display: none;
   }
@@ -771,13 +776,25 @@ footer ul {
     padding: 0 0.5em;
   }
 
+  /* 500px 以下仍保留网站图标与学校图标之间的竖线 */
   .header-divider {
-    display: none;
+    display: block;
   }
 
   /* 仅保留校徽，校名隐藏 */
   .header-university-name {
     display: none;
+  }
+
+  /* logo 仅保留中间图片：lunar 与 iv 隐藏，img 缩放与校徽一致（固定高度） */
+  .header-bottom .logo .logo-word {
+    display: none !important;
+  }
+
+  .header-bottom .logo-img {
+    height: 73px;
+    width: auto;
+    display: block;
   }
 
   .header-university {
@@ -802,16 +819,23 @@ footer ul {
     display: flex;
     flex-shrink: 0;
   }
-}
 
-/* 最小视口：商标只保留中间图片，两侧文字隐藏 */
-@media screen and (max-width: 360px) {
-  .logo-word {
-    display: none !important;
+  /* 主内容区窄屏微调（原 481px 逻辑合并） */
+  .main-container {
+    padding: 10px 8px;
   }
 
-  .logo-img {
-    height: 1.4em;
+  .list-title {
+    font-size: 1rem;
+  }
+
+  .content-wrapper {
+    padding: 0 0.5em;
+  }
+
+  .abstract-block {
+    margin-left: 0.5em;
+    margin-right: 0.5em;
   }
 }
 
@@ -942,28 +966,6 @@ footer ul {
   footer {
     margin-top: 3rem;
     padding: 1em;
-  }
-}
-
-/****************************************
- *  Responsive: 480px 窄屏
- ****************************************/
-@media screen and (max-width: 480px) {
-  .main-container {
-    padding: 10px 8px;
-  }
-
-  .list-title {
-    font-size: 1rem;
-  }
-
-  .content-wrapper {
-    padding: 0 0.5em;
-  }
-
-  .abstract-block {
-    margin-left: 0.5em;
-    margin-right: 0.5em;
   }
 }
 

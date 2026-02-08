@@ -10,7 +10,7 @@
   const PAGINATION_BOTTOM_ID = 'pagination-bottom';
   const PAGE_TITLE_ID = 'page-title';
   const DATA_URL = 'data/papers.json';
-  const ABSTRACT_MAX_LEN = 150;
+  const ABSTRACT_MAX_LEN = 450;
 
   let allPapers = [];
 
