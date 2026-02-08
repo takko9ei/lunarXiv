@@ -270,7 +270,7 @@ img {
 }
 
 /****************************************
- *  首页主内容区
+ *  首页主内容区（列表、标题、摘要等来自 data，使用中文衬线字体）
  ****************************************/
 .main-container {
   margin: 0.7em;
@@ -279,6 +279,7 @@ img {
   margin-left: auto;
   margin-right: auto;
   padding: 20px;
+  font-family: "Noto Serif SC", "Noto Serif CJK SC", "Source Han Serif CN", SimSun, "Songti SC", Georgia, "Times New Roman", serif;
 }
 
 h1.page-title {
@@ -466,12 +467,14 @@ h1.page-title {
   overflow: auto;
 }
 
+/* 详情主栏：标题、作者、摘要等来自 data，使用中文衬线字体 */
 .main-column {
   margin: 0 0 1em 0;
   padding: 0;
   width: calc(100% - 18em);
   float: left;
   min-width: 0;
+  font-family: "Noto Serif SC", "Noto Serif CJK SC", "Source Han Serif CN", SimSun, "Songti SC", Georgia, "Times New Roman", serif;
 }
 
 /* 侧栏 extra-services (arXiv.css .extra-services) */
