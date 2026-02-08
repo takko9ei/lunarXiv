@@ -128,11 +128,35 @@ img {
   color: #fff;
   letter-spacing: -1px;
   flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
 }
 
 .header-bottom a.logo:hover {
   text-decoration: none;
   opacity: 0.9;
+}
+
+/* lunarXiv 图文混排商标：lunar + 图 + iv */
+.logo-brand {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.1em;
+}
+
+.logo-word {
+  font-family: "Larabiefont", "Larabie", "Lucida Grande", helvetica, arial, sans-serif;
+  font-weight: bold;
+  color: inherit;
+}
+
+.logo-img {
+  height: 0.9em;
+  width: auto;
+  vertical-align: middle;
+  display: block;
 }
 
 /* 竖向分割线：平板时在 arXiv 与校徽校名之间显示 */
@@ -757,6 +781,17 @@ footer ul {
   .header-menu-btn {
     display: flex;
     flex-shrink: 0;
+  }
+}
+
+/* 最小视口：商标只保留中间图片，两侧文字隐藏 */
+@media screen and (max-width: 360px) {
+  .logo-word {
+    display: none !important;
+  }
+
+  .logo-img {
+    height: 1.4em;
   }
 }
 
