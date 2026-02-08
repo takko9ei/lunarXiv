@@ -1,0 +1,167 @@
+[
+  {
+    "id": "p001",
+    "title": "Analysis of Deep Learning Architectures for Natural Language Understanding",
+    "authors": ["Jane Smith", "Robert Chen", "Emily Wang"],
+    "abstract": "We present a comprehensive analysis of transformer-based and recurrent architectures for natural language understanding tasks. Our experiments on multiple benchmarks show that attention mechanisms significantly improve generalization across domains.",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. We extend our analysis to multilingual settings and discuss implications for low-resource languages. The experimental setup and hyperparameters are described in Section 2. Results are presented in Section 3, followed by discussion and future work.",
+    "keywords": ["deep learning", "NLP", "transformers", "attention"],
+    "date": "2024-03-15",
+    "doi": "https://doi.org/10.1000/xyz.001",
+    "pdf_url": "assets/pdf/sample.pdf"
+  },
+  {
+    "id": "p002",
+    "title": "A Survey of Federated Learning for Privacy-Preserving Machine Learning",
+    "authors": ["Alice Johnson", "Bob Williams"],
+    "abstract": "Federated learning enables training models across distributed devices without centralizing raw data. This survey reviews communication efficiency, aggregation strategies, and differential privacy guarantees in federated settings.",
+    "content": "Federated learning has emerged as a promising paradigm for training machine learning models while preserving data locality. In this work we survey recent advances in communication-efficient algorithms, secure aggregation protocols, and theoretical convergence guarantees. We provide a taxonomy of existing approaches and identify open challenges for deployment in healthcare and finance. Experimental validation on standard benchmarks is included.",
+    "keywords": ["federated learning", "privacy", "distributed learning"],
+    "date": "2024-02-28",
+    "doi": "https://doi.org/10.1000/xyz.002",
+    "pdf_url": "assets/pdf/sample.pdf"
+  },
+  {
+    "id": "p003",
+    "title": "On the Generalization of Vision Transformers to Out-of-Distribution Data",
+    "authors": ["Carlos Mendez", "Yuki Tanaka", "Sophie Martin"],
+    "abstract": "Vision transformers have achieved strong performance on in-distribution benchmarks. We study their robustness to distribution shift and propose a simple fine-tuning strategy that improves OOD accuracy without sacrificing in-distribution performance.",
+    "content": "Out-of-distribution generalization remains a key challenge for deep vision models. We systematically evaluate ViT and its variants under common distribution shifts including style transfer, corruption, and domain shift. Our proposed method combines contrastive pre-training with targeted fine-tuning on a small OOD validation set. We report results on ImageNet-C, ImageNet-R, and DomainNet.",
+    "keywords": ["vision transformer", "out-of-distribution", "robustness"],
+    "date": "2024-01-10",
+    "doi": "https://doi.org/10.1000/xyz.003",
+    "pdf_url": "assets/pdf/sample.pdf"
+  },
+  {
+    "id": "p004",
+    "title": "Efficient Inference of Large Language Models via Structured Sparsity",
+    "authors": ["David Lee", "Maria Garcia", "James Wilson"],
+    "abstract": "We introduce a structured sparsity scheme for reducing the computational cost of large language model inference. Our method achieves 2x speedup with minimal accuracy degradation on downstream tasks.",
+    "content": "Large language models require substantial compute for inference. We propose applying block-sparse patterns to attention and feed-forward layers, enabling efficient matrix operations on GPUs. We analyze the trade-off between sparsity ratio and perplexity, and provide pruning recipes for LLaMA-style architectures. Ablation studies confirm the importance of structure in maintaining quality.",
+    "keywords": ["LLM", "sparsity", "efficient inference"],
+    "date": "2023-12-05",
+    "doi": "https://doi.org/10.1000/xyz.004",
+    "pdf_url": "assets/pdf/sample.pdf"
+  },
+  {
+    "id": "p005",
+    "title": "Reinforcement Learning from Human Feedback: A Formal Framework",
+    "authors": ["Anna Brown", "Thomas Davis"],
+    "abstract": "We formalize the RLHF pipeline as a Markov decision process with preference-based reward modeling. We prove convergence under certain assumptions and provide empirical validation on dialogue and summarization tasks.",
+    "content": "Reinforcement learning from human feedback has become central to aligning language models. We present a formal MDP formulation and analyze the effect of reward model bias and non-stationarity. We derive sufficient conditions for policy convergence and discuss practical considerations for scaling. Experiments on GPT-style models are reported.",
+    "keywords": ["RLHF", "preference learning", "alignment"],
+    "date": "2023-11-20",
+    "doi": "https://doi.org/10.1000/xyz.005",
+    "pdf_url": "assets/pdf/sample.pdf"
+  },
+  {
+    "id": "p006",
+    "title": "Graph Neural Networks for Molecular Property Prediction: Benchmarks and Baselines",
+    "authors": ["Wei Zhang", "Lisa Park", "Kevin Nguyen"],
+    "abstract": "We release a benchmark suite for molecular property prediction using graph neural networks. We compare message-passing and graph transformer architectures and provide reproducible baselines on standard datasets.",
+    "content": "Molecular property prediction is critical for drug discovery. We curate a benchmark spanning regression and classification tasks, with standardized splits and evaluation metrics. We implement and compare GCN, GAT, and graph transformers, reporting mean absolute error and ROC-AUC. Code and data are publicly available.",
+    "keywords": ["GNN", "molecular", "benchmark"],
+    "date": "2023-10-12",
+    "doi": "https://doi.org/10.1000/xyz.006",
+    "pdf_url": "assets/pdf/sample.pdf"
+  },
+  {
+    "id": "p007",
+    "title": "Contrastive Learning for Unsupervised Domain Adaptation",
+    "authors": ["Rachel Green", "Michael Scott"],
+    "abstract": "We propose a contrastive objective that aligns source and target representations without target labels. Our method outperforms prior UDA approaches on Office-31 and VisDA with fewer hyperparameters.",
+    "content": "Unsupervised domain adaptation aims to transfer models from labeled source to unlabeled target domains. We use contrastive learning to pull same-class samples together across domains while pushing different classes apart. We avoid adversarial training and show that a simple InfoNCE-style loss suffices. We report results and ablation studies.",
+    "keywords": ["domain adaptation", "contrastive learning", "transfer learning"],
+    "date": "2023-09-08",
+    "doi": "https://doi.org/10.1000/xyz.007",
+    "pdf_url": "assets/pdf/sample.pdf"
+  },
+  {
+    "id": "p008",
+    "title": "Scalable Bayesian Optimization for Hyperparameter Tuning",
+    "authors": ["Daniel Kim", "Sarah Miller", "Chris Anderson"],
+    "abstract": "We present a scalable Bayesian optimization framework that uses sparse Gaussian processes and parallel acquisition. We demonstrate 10x speedup over sequential BO on large neural architecture search spaces.",
+    "content": "Bayesian optimization is effective but expensive for high-dimensional and parallel evaluation settings. We introduce a sparse GP approximation with inducing points and a batch acquisition function that accounts for diversity. We apply the method to NAS benchmarks and tuning large language model hyperparameters. Implementation details and runtime analysis are provided.",
+    "keywords": ["Bayesian optimization", "hyperparameter tuning", "Gaussian process"],
+    "date": "2023-08-22",
+    "doi": "https://doi.org/10.1000/xyz.008",
+    "pdf_url": "assets/pdf/sample.pdf"
+  },
+  {
+    "id": "p009",
+    "title": "Interpretable Attention Mechanisms for Clinical Document Classification",
+    "authors": ["Laura Martinez", "John Taylor", "Emma White"],
+    "abstract": "We design attention modules that produce human-readable rationales for clinical text classification. Evaluations with domain experts show improved trust and comparable accuracy to black-box models.",
+    "content": "Clinical NLP systems must be interpretable for adoption. We propose attention mechanisms that highlight phrases contributing to the prediction, with optional constraints for coherence. We evaluate on MIMIC-III discharge summaries and radiology reports. Expert studies confirm that our rationales align with clinical reasoning.",
+    "keywords": ["interpretability", "clinical NLP", "attention"],
+    "date": "2023-07-14",
+    "doi": "https://doi.org/10.1000/xyz.009",
+    "pdf_url": "assets/pdf/sample.pdf"
+  },
+  {
+    "id": "p010",
+    "title": "Neural Symbolic Integration for Mathematical Reasoning",
+    "authors": ["Paul Harris", "Nina Kowalski", "Oliver Clark"],
+    "abstract": "We combine neural sequence models with symbolic solvers for step-by-step math reasoning. The hybrid system achieves state-of-the-art on GSM8K and MATH with reduced hallucination compared to pure neural approaches.",
+    "content": "Mathematical reasoning requires both pattern recognition and rigorous derivation. We train a neural model to propose steps and invoke a symbolic checker to validate and correct. We study the division of labor between neural and symbolic components and report results on arithmetic and algebra benchmarks. Error analysis is included.",
+    "keywords": ["math reasoning", "neural symbolic", "verification"],
+    "date": "2023-06-01",
+    "doi": "https://doi.org/10.1000/xyz.010",
+    "pdf_url": "assets/pdf/sample.pdf"
+  },
+  {
+    "id": "p011",
+    "title": "Efficient Fine-Tuning of Vision-Language Models with Adapter Layers",
+    "authors": ["Helen Wright", "Peter Evans"],
+    "abstract": "We introduce lightweight adapter modules for vision-language models that enable task-specific fine-tuning with less than 1% of parameters. We achieve competitive performance on VQA and retrieval with minimal memory footprint.",
+    "content": "Vision-language models are large and expensive to fine-tune. We insert small adapter layers into frozen CLIP-style models and train only the adapters on downstream tasks. We compare different insertion strategies and adapter sizes. We report accuracy and training time on standard benchmarks.",
+    "keywords": ["vision-language", "adapters", "efficient fine-tuning"],
+    "date": "2023-05-18",
+    "doi": "https://doi.org/10.1000/xyz.011",
+    "pdf_url": "assets/pdf/sample.pdf"
+  },
+  {
+    "id": "p012",
+    "title": "Temporal Point Processes for Event Sequence Modeling",
+    "authors": ["Julia Adams", "Mark Roberts"],
+    "abstract": "We model event sequences using neural temporal point processes with learned intensity functions. Our approach captures long-range dependencies and outperforms baselines on prediction and goodness-of-fit metrics.",
+    "content": "Event sequence data appears in healthcare, finance, and user behavior. We parameterize intensity functions with transformers and train via maximum likelihood. We address non-stationarity and missing data. Experiments on synthetic and real-world datasets demonstrate improved next-event prediction and time-to-event calibration.",
+    "keywords": ["point process", "event sequence", "temporal modeling"],
+    "date": "2023-04-03",
+    "doi": "https://doi.org/10.1000/xyz.012",
+    "pdf_url": "assets/pdf/sample.pdf"
+  },
+  {
+    "id": "p013",
+    "title": "Robustness of Speech Recognition Systems to Adversarial Perturbations",
+    "authors": ["Andrew Foster", "Susan Bell", "Ryan Cooper"],
+    "abstract": "We systematically evaluate ASR systems under adversarial noise and propose a certified defense based on randomized smoothing. We release an evaluation suite and report results on LibriSpeech and Common Voice.",
+    "content": "Speech recognition systems are vulnerable to adversarial examples. We survey existing attacks and defenses and propose a certified defense that guarantees robustness within an L2 ball. We discuss the trade-off between certified radius and clean accuracy. We provide code and evaluation protocols for reproducibility.",
+    "keywords": ["speech recognition", "adversarial robustness", "certified defense"],
+    "date": "2023-03-19",
+    "doi": "https://doi.org/10.1000/xyz.013",
+    "pdf_url": "assets/pdf/sample.pdf"
+  },
+  {
+    "id": "p014",
+    "title": "Multi-Task Learning for Low-Resource Named Entity Recognition",
+    "authors": ["Karen Lewis", "Steven Hill"],
+    "abstract": "We use multi-task learning to improve NER in low-resource languages by sharing representations with high-resource tasks. We show gains on 5 languages with fewer than 1k labeled sentences.",
+    "content": "Named entity recognition requires substantial labeled data. We train a shared encoder on high-resource NER and related tasks (e.g., POS, chunking), then fine-tune on low-resource NER. We analyze which auxiliary tasks help most and report F1 scores. We release model checkpoints for all languages.",
+    "keywords": ["NER", "low-resource", "multi-task learning"],
+    "date": "2023-02-07",
+    "doi": "https://doi.org/10.1000/xyz.014",
+    "pdf_url": "assets/pdf/sample.pdf"
+  },
+  {
+    "id": "p015",
+    "title": "Calibration of Predictive Uncertainty in Deep Regression",
+    "authors": ["Brian Moore", "Jennifer King"],
+    "abstract": "We study calibration of uncertainty estimates in deep regression networks. We propose a post-hoc calibration method that improves reliability of prediction intervals without retraining.",
+    "content": "Uncertainty quantification is essential for safety-critical regression. We evaluate existing approaches (ensemble, dropout, evidential) on calibration metrics and propose a isotonic regression-based post-processing step. We demonstrate on medical and climate prediction tasks. We discuss limitations and recommend best practices.",
+    "keywords": ["uncertainty", "calibration", "regression"],
+    "date": "2023-01-15",
+    "doi": "https://doi.org/10.1000/xyz.015",
+    "pdf_url": "assets/pdf/sample.pdf"
+  }
+]

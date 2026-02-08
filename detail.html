@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>论文详情 | Paper Archive</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link">首页</a>
+        <a href="detail.html" class="nav-link active">详情</a>
+      </nav>
+      <h1 class="site-title">论文详情</h1>
+    </header>
+
+    <main class="container">
+      <article id="paper-detail" class="paper-detail" aria-live="polite">
+        <!-- 由 detail.js 根据 ?id=xxx 填充，或显示 Paper not found -->
+        <p class="loading">正在加载论文信息…</p>
+      </article>
+      <p class="back-link-wrap">
+        <a href="index.html" class="back-link">← 返回列表</a>
+      </p>
+    </main>
+
+    <footer>
+      <p>&copy; 论文归档 · 纯静态 · GitHub Pages</p>
+    </footer>
+
+    <script src="js/detail.js"></script>
+  </body>
+</html>

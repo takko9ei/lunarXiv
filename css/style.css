@@ -1,0 +1,373 @@
+/* ===== 学术论文归档站 · 全局样式 ===== */
+/* 衬线字体：标题 | 无衬线：正文 */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  line-height: 1.65;
+  color: #222;
+  background-color: #fafafa;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== 版心：最大宽度 900px，居中 ===== */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem;
+  flex: 1;
+}
+
+/* ===== 导航 ===== */
+header {
+  background: #2c3e50;
+  color: #ecf0f1;
+  padding: 1rem 1.25rem;
+}
+
+.main-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.nav-link {
+  color: #bdc3c7;
+  text-decoration: none;
+  padding: 0.4rem 0.85rem;
+  border-radius: 4px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  color: #fff;
+}
+
+.nav-link.active {
+  background-color: rgba(255, 255, 255, 0.18);
+  color: #fff;
+}
+
+/* 站点标题：衬线字体 ===== */
+.site-title {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+  margin: 0 0 0.25rem 0;
+}
+
+.site-desc {
+  font-size: 0.9rem;
+  text-align: center;
+  margin: 0;
+  opacity: 0.9;
+}
+
+/* ===== 论文列表：Card / Block ===== */
+.paper-list {
+  margin-bottom: 2rem;
+}
+
+.paper-card {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1rem;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.paper-card:hover {
+  border-color: #b0b0b0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.paper-card .paper-title {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.35;
+}
+
+.paper-card .paper-title a {
+  color: #1a365d;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.paper-card .paper-title a:hover {
+  color: #2c5282;
+  border-bottom-color: #2c5282;
+}
+
+.paper-meta {
+  font-size: 0.875rem;
+  color: #555;
+  margin-bottom: 0.6rem;
+}
+
+.paper-meta .authors {
+  font-style: italic;
+}
+
+.paper-meta .date {
+  margin-left: 0.5rem;
+}
+
+.paper-abstract {
+  font-size: 0.9rem;
+  color: #444;
+  margin: 0.6rem 0 0.85rem 0;
+}
+
+.paper-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+}
+
+.paper-actions a,
+.paper-actions .btn {
+  color: #2c5282;
+  text-decoration: none;
+  padding: 0.35rem 0.7rem;
+  border-radius: 4px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.paper-actions a:hover,
+.paper-actions .btn:hover {
+  background-color: #edf2f7;
+  color: #1a365d;
+}
+
+.paper-actions .btn {
+  display: inline-block;
+  background: #2c3e50;
+  color: #fff !important;
+  border: none;
+  cursor: pointer;
+  font-size: 0.875rem;
+}
+
+.paper-actions .btn:hover {
+  background: #34495e;
+}
+
+/* ===== 分页 ===== */
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-top: 1px solid #e0e0e0;
+}
+
+.pagination .page-info {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.pagination a,
+.pagination span {
+  padding: 0.45rem 0.9rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.pagination a {
+  background: #2c3e50;
+  color: #fff;
+}
+
+.pagination a:hover {
+  background: #34495e;
+}
+
+.pagination span.disabled {
+  background: #ccc;
+  color: #666;
+  cursor: not-allowed;
+}
+
+/* ===== 详情页 ===== */
+.paper-detail {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 1.5rem 2rem;
+  margin-bottom: 1rem;
+}
+
+.paper-detail .detail-title {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 0.75rem 0;
+  line-height: 1.3;
+  color: #1a365d;
+}
+
+.paper-detail .detail-meta {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.paper-detail .detail-meta .authors {
+  font-style: italic;
+}
+
+.paper-detail .detail-section {
+  margin-top: 1.25rem;
+}
+
+.paper-detail .detail-section h2 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+  color: #333;
+}
+
+.paper-detail .detail-section p,
+.paper-detail .detail-section .keywords {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.95rem;
+}
+
+.paper-detail .keywords span {
+  display: inline-block;
+  background: #edf2f7;
+  color: #2c5282;
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+  margin-right: 0.35rem;
+  margin-bottom: 0.35rem;
+  font-size: 0.85rem;
+}
+
+.paper-detail .detail-actions {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+}
+
+/* ===== 错误态：Paper not found ===== */
+.paper-not-found {
+  text-align: center;
+  padding: 2rem;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+}
+
+.paper-not-found h2 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 1.25rem;
+  color: #c53030;
+  margin: 0 0 0.75rem 0;
+}
+
+.paper-not-found p {
+  margin: 0 0 1rem 0;
+  color: #555;
+}
+
+.paper-not-found a {
+  color: #2c5282;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.paper-not-found a:hover {
+  background: #edf2f7;
+  color: #1a365d;
+}
+
+/* ===== 加载态 ===== */
+.loading {
+  color: #666;
+  font-style: italic;
+  margin: 1rem 0;
+}
+
+/* ===== 返回列表链接 ===== */
+.back-link-wrap {
+  margin-top: 0.5rem;
+}
+
+.back-link {
+  color: #2c5282;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.back-link:hover {
+  color: #1a365d;
+  text-decoration: underline;
+}
+
+/* ===== 页脚 ===== */
+footer {
+  background: #2c3e50;
+  color: #bdc3c7;
+  text-align: center;
+  padding: 0.9rem;
+  font-size: 0.85rem;
+  margin-top: auto;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* ===== 移动端 ===== */
+@media (max-width: 600px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .paper-card,
+  .paper-detail {
+    padding: 1rem 1.15rem;
+  }
+
+  .paper-detail .detail-title {
+    font-size: 1.25rem;
+  }
+
+  .pagination {
+    flex-direction: column;
+  }
+}
