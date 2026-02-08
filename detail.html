@@ -8,18 +8,35 @@
   </head>
   <body>
     <div class="header-top">
-      <span>Cornell University</span>
-      <span style="margin-left: auto"
-        >We gratefully acknowledge support from the Simons Foundation.</span
+      <div class="header-top-left">
+        <img
+          src="assets/image/university-logo.png"
+          alt=""
+          class="header-crest"
+        />
+        <span class="header-school-name">Yachiyo University</span>
+      </div>
+      <span class="header-top-right"
+        >We gratefully acknowledge support from the Asahi Foundation.</span
       >
     </div>
 
     <div class="header-bottom">
-      <a href="index.html" class="logo">arXiv</a>
+      <a href="index.html" class="logo">lunarXiv</a>
+      <span class="header-divider" aria-hidden="true"></span>
+      <div class="header-university">
+        <img
+          src="assets/image/university-logo.png"
+          alt=""
+          class="header-crest-inline"
+        />
+        <span class="header-university-name">Yachiyo University</span>
+      </div>
       <div class="header-search-box">
         <input type="text" placeholder="Search..." size="30" />
-        <button>Search</button>
+        <button type="submit">Search</button>
       </div>
+      <a href="#" class="header-menu-btn" aria-label="Menu">☰</a>
     </div>
 
     <div class="content-wrapper">
@@ -34,7 +51,11 @@
         <div class="sidebar-box">
           <div class="sidebar-header">Access Paper:</div>
           <ul class="access-paper-list">
-            <li><a href="#" class="download-btn" id="sidebar-download-pdf">Download PDF</a></li>
+            <li>
+              <a href="#" class="download-btn" id="sidebar-download-pdf"
+                >Download PDF</a
+              >
+            </li>
             <li><a href="#" class="download-btn">Other Formats</a></li>
           </ul>
           <div style="margin-top: 10px; font-size: 13px">
