@@ -1,136 +1,106 @@
 [
   {
-    "id": "p001",
-    "title": "Protocol for High-Bandwidth Neural Bridging: Mitigating Latency in Digital-to-Biological Signal Transduction",
-    "authors": ["Iroha Sakayori", "Liam O'Connor", "Mei Lin"],
-    "abstract": "The transition from purely digital consciousness emulation to biological actuation requires a zero-latency interface. We propose a new Neuro-Optical Bridge (NOB) architecture capable of translating high-frequency cognitive data streams into bio-electric signals compatible with synthetic nervous systems.",
-    "content": "Prior attempts at consciousness grounding failed due to the 'disembodiment lag'—a millisecond delay between intention and actuation that causes cognitive rejection. Our research focuses on the pre-processing of volitional data packets. By utilizing quantum-entangled sensor nodes, we achieved a signal transduction rate of <0.2ms, effectively bypassing the uncanny valley of proprioception. This protocol lays the foundation for future 'Soul Container' projects, ensuring that a digitized mind feels the synthetic limb as an intrinsic part of the self rather than a remote-controlled tool. Simulation results suggest this architecture can support consciousness files exceeding petabyte-scale complexity.",
-    "keywords": [
-      "neural interface",
-      "latency mitigation",
-      "consciousness transfer",
-      "biomimetics"
-    ],
+    "id": "4205.00089",
+    "title": "高带宽神经桥接协议：消除数字-生物信号转导中的延迟",
+    "authors": ["酒寄彩叶", "佐藤 莲", "铃木 阳葵"],
+    "abstract": "从纯数字意识模拟向生物实体驱动的过渡需要零延迟的接口。本文提出了一种新型的神经-光学桥接（NOB）架构，能够将高频认知数据流转化为与合成神经系统兼容的生物电信号。",
+    "content": "此前意识落地的尝试均因“离体滞后”——即意图与动作之间微秒级的延迟导致认知排斥——而失败。本研究专注于意志数据包的预处理。通过利用量子纠缠传感器节点，我们实现了低于0.2毫秒的信号转导率，有效跨越了本体感知的“恐怖谷”效应。该协议为未来的“灵魂容器”项目奠定了基础，确保数字化心智将合成肢体感知为自我的固有部分。仿真结果表明，该架构可支持复杂度超过PB级的意识文件。",
+    "keywords": ["神经接口", "延迟消除", "cu.CT (意识迁移)", "仿生学"],
     "date": "2042-05-12",
-    "doi": "https://doyomi.org/10.1000/neur.2042.089",
+    "doi": "https://doyomi.org/10.1000/neur.4205.00089",
     "pdf_url": "assets/pdf/2042_neural_bridge.pdf"
   },
   {
-    "id": "p002",
-    "title": "Synthesizing the Golden Ratio: Biomimetic Epidermis and Micro-Actuation for Hyper-Realistic Facial Expressions",
-    "authors": ["Sofia Rossi", "Iroha Sakayori", "Haruto Tanaka"],
-    "abstract": "This paper details the fabrication of the 'Aura-7' synthetic dermis. We focus on the challenges of replicating the micro-flush response and thermal conductivity of adolescent human skin to support non-verbal communication fidelity.",
-    "content": "To achieve a truly indistinguishable humanoid vessel, static appearance is insufficient. We developed a capillary-mimicking fluid system embedded within a collagen-graphene matrix. This allows the bionic face to exhibit involuntary physiological responses such as blushing or paling in response to the driver's emotional data. Specific attention was paid to the tensile strength and elasticity required to match the phenotypical aesthetics of the target vessel (Project Ref: 'Golden Child' morphology). Tests confirm that the skin maintains homeostatic warmth indistinguishable from a biological human, crucial for social haptics.",
-    "keywords": [
-      "synthetic skin",
-      "micro-fluidics",
-      "soft robotics",
-      "affective computing"
-    ],
+    "id": "4311.00112",
+    "title": "合成“黄金比例”：用于超写实面部表情的仿生表皮与微致动系统",
+    "authors": ["高桥 凑", "酒寄彩叶", "中村 芽依"],
+    "abstract": "本文详述了“Aura-7”合成真皮的制造工艺。我们重点解决了模拟青春期人类皮肤的微潮红反应和导热性的挑战，以支持非语言交流的高保真度。",
+    "content": "要实现真正无法区分的人形容器，仅有静态外观是不够的。我们开发了一种嵌入胶原-石墨烯基质中的仿毛细血管流体系统。这使得仿生面部能够根据驾驶者的情感数据表现出非自主的生理反应，如害羞时的脸红或受惊时的苍白。我们特别关注了匹配目标容器（项目参考代号：“黄金之子”形态）表型美学所需的抗拉强度和弹性。测试证实，该皮肤保持着与生物人类无异的稳态温度，这对于社会性触觉交互至关重要。",
+    "keywords": ["合成皮肤", "微流控", "bs.BM (仿生形态学)", "情感计算"],
     "date": "2043-11-20",
-    "doi": "https://doyomi.org/10.1000/mat.2043.112",
+    "doi": "https://doyomi.org/10.1000/mat.4311.00112",
     "pdf_url": "assets/pdf/2043_skin_tech.pdf"
   },
   {
-    "id": "p003",
-    "title": "Project Celestia: Successful Integration of an 8000-Year Memory Complex into a Phenotype-Matched Bionic Host",
-    "authors": [
-      "Iroha Sakayori",
-      "Elena V. Sokolov",
-      "Noah Williams",
-      "Yui Takahashi"
-    ],
-    "abstract": "We report the first successful long-term habitation of a digital human consciousness within a fully autonomous bionic body. The subject, possessing a memory dataset spanning eight millennia, reports full sensory integration and identity continuity within the phenotype-matched vessel.",
-    "content": "This paper summarizes the activation of the 'Prime Unit.' The consciousness, a digitized human entity with an extensive historical memory log (approx. 8000 years), was imported into a custom-built bionic chassis designed to perfectly replicate her original adolescent physiology (female, approx. 14 years of age, blonde phenotype). Post-activation metrics indicate 99.98% neural synchronization. The subject demonstrated immediate recognition of self in the mirror test and successfully performed complex motor tasks. Crucially, the massive memory load did not cause processor overheating or cognitive fragmentation, validating our 'Deep-Well' storage architecture located in the thoracic cavity.",
+    "id": "4507.00001",
+    "title": "Celestia计划：8000年记忆复合体在表型匹配仿生宿主中的成功整合",
+    "authors": ["酒寄彩叶", "陈 梓轩", "田中 飒", "伊藤 结菜"],
+    "abstract": "我们报告了首例数字人类意识在全自主仿生躯体中的长期驻留案例。该受试者拥有跨越八千年的记忆数据集，报告称在与其表型匹配的容器中实现了完全的感官整合和身份连续性。",
+    "content": "本文总结了“原初机体（Prime Unit）”的激活过程。该意识体——一个拥有庞大历史记忆日志（约8000年）的数字化人类实体——被导入了一个定制的仿生底盘，该底盘旨在完美复制其原始的青春期生理机能（女性，约14岁，金发表型）。激活后的指标显示神经同步率达到99.98%。受试者在镜像测试中立即识别出自我，并成功执行了复杂的运动任务。关键在于，海量的记忆负载并未导致处理器过热，验证了我们位于胸腔内的“深井”存储架构的有效性。",
     "keywords": [
-      "Soul Container",
-      "consciousness integration",
-      "cybernetics",
-      "post-humanism",
-      "memory architecture"
+      "灵魂容器",
+      "cu.ID (身份连续性)",
+      "赛博格",
+      "后人类主义",
+      "记忆架构"
     ],
     "date": "2045-07-07",
-    "doi": "https://doyomi.org/10.1000/core.2045.001",
+    "doi": "https://doyomi.org/10.1000/core.4507.00001",
     "pdf_url": "assets/pdf/2045_celestia_main.pdf"
   },
   {
-    "id": "p004",
-    "title": "Dyadic Resonance: A Longitudinal Study of Sympathetic Nervous System Synchronization in Close-Proximity Interactions",
-    "authors": ["Iroha Sakayori"],
-    "abstract": "An investigation into the emotional processing capabilities of the Prime Unit through sustained, high-intimacy behavioral testing. Data focuses on oxytocin-analog regulation and heart rate variability synchronization between the creator and the subject.",
-    "content": "Unlike standard cognitive benchmarking, this study evaluates the 'felt experience' of the subject through unscripted, intimate co-habitation scenarios. Over a period of six months, the subject and the principal investigator engaged in close-contact repose and reciprocal tactile affirmation (e.g., embracing, hand-holding, and sleep-adjacent monitoring). Results show that the subject's synthetic heart rate creates a coherent interference pattern with the investigator's biological rhythm during moments of silence. Subject reported 'peace' and 'warmth' correlating with specific bio-feedback loops. These findings suggest the 'Soul Container' successfully replicates the metaphysical sensation of love and pair-bonding. No anomalies detected in the 'kiss-reflex' sub-routine; sensory feedback was described by the subject as 'electrifyingly nostalgic.'",
+    "id": "4512.00999",
+    "title": "二元共鸣：近距离交互中交感神经系统同步化的纵向研究",
+    "authors": ["酒寄彩叶"],
+    "abstract": "通过持续的高亲密度行为测试，调查原初机体的情感处理能力。数据集中于创造者与受试者之间的催产素模拟调节和心率变异性同步。",
+    "content": "本研究通过无剧本的、亲密的共同居住场景评估受试者的“感知体验”。在为期六个月的时间里，受试者与主要研究者进行了密切接触的休憩和交互式触觉确认（如拥抱、牵手和伴随睡眠监测）。结果显示，在静默时刻，受试者的合成心率与研究者的生物节律形成了连贯的干涉模式。受试者报告了与特定生物反馈回路相关的“平静”和“温暖”感。这些发现表明，“灵魂容器”成功复制了爱与配对结合的形而上学感觉。“接吻反射”子程序中未检测到异常；受试者将感官反馈描述为“令人战栗的怀旧感”。",
     "keywords": [
-      "emotional Turing test",
-      "dyadic coupling",
-      "synthetic endocrinology",
-      "intimacy studies"
+      "hi.AS (情感同步)",
+      "二元耦合",
+      "合成内分泌学",
+      "hi.SH (社会触觉学)"
     ],
     "date": "2045-12-24",
-    "doi": "https://doyomi.org/10.1000/psych.2045.999",
+    "doi": "https://doyomi.org/10.1000/psych.4512.00999",
     "pdf_url": "assets/pdf/2045_private_logs.pdf"
   },
   {
-    "id": "p005",
-    "title": "Metabolic Homeostasis in Endosymbiotic Bio-Reactors: Simulating Human Nutritive Processing",
-    "authors": ["Iroha Sakayori", "Mateo Garcia", "Amara Okafor"],
-    "abstract": "To achieve full biological parity, the Prime Unit must interact with organic matter. We present a synthetic digestive tract capable of converting glucose and complex carbohydrates into electrical energy, mimicking the human social act of eating.",
-    "content": "The 'vessel' requires more than just a battery; it requires the ritual of consumption. We designed a micro-scale bio-reactor located in the abdominal cavity that utilizes engineered enzymes to break down organic foodstuffs. This system is not merely for power—it provides the olfactory and gustatory feedback loops necessary for a digitized consciousness to feel 'alive.' The research demonstrates that the subject can taste and process food with 98% correlation to her original biological taste bud distribution. Waste management is handled via high-efficiency thermal evaporation, eliminating the need for traditional excretory functions while maintaining the aesthetic integrity of the adolescent form.",
-    "keywords": [
-      "bio-energy",
-      "synthetic metabolism",
-      "gustatory sensors",
-      "homeostasis"
-    ],
+    "id": "4303.00402",
+    "title": "内共生生物反应器中的代谢稳态：模拟人类营养处理过程",
+    "authors": ["酒寄彩叶", "渡边 苍", "金 敏硕"],
+    "abstract": "为了实现完全的生物对等性，原初机体必须与有机物质进行交互。我们提出了一种合成消化道，能够将葡萄糖和复合碳水化合物转化为电能，模拟人类的进食社交行为。",
+    "content": "我们在腹腔内设计了一个微型生物反应器，利用工程酶分解有机食品。该系统不仅仅是为了供能——它提供了数字化意识感到“活着”所需的嗅觉和味觉反馈回路。研究表明，受试者能够品尝和处理食物，其味觉分布与原本的生物味蕾相关性达到98%。废物管理通过高效的热蒸发处理，消除了传统排泄功能的需要，同时保持了青春期形态的美学完整性。",
+    "keywords": ["生物能", "合成代谢", "味觉传感器", "bs.HM (恒定稳态管理)"],
     "date": "2043-03-30",
-    "doi": "https://doyomi.org/10.1000/bio.2043.402",
+    "doi": "https://doyomi.org/10.1000/bio.4303.00402",
     "pdf_url": "assets/pdf/2043_metabolic_systems.pdf"
   },
   {
-    "id": "p006",
-    "title": "The Chronos Partition: Archiving 8000 Years of Memory within a Standard Humanoid Neural Volume",
-    "authors": ["Iroha Sakayori", "Chloe Dubois", "Kenji Sato"],
-    "abstract": "The subject possesses a memory corpus exceeding 8000 years of lived experience. This paper investigates the 'Temporal Indexing' method used to prevent cognitive 'overflow' and maintain a stable 14-year-old personality matrix.",
-    "content": "One of the greatest challenges of Project Celestia was the sheer scale of the subject's memory. A standard bionic brain would suffer from 'associative flooding.' We implemented a tiered storage system: 'Active Persona' (the last 100 years) and 'Deep Archive' (the preceding 7,900 years). The archive is accessible through meditative states or specific environmental triggers, preventing the subject from being overwhelmed by the weight of millennia. Observations show that the subject effectively maintains the curiosity and emotional plasticity of a teenager while possessing the wisdom of an ancient entity. The 'blonde girl' phenotype acts as a stabilizing anchor for this persona.",
-    "keywords": [
-      "memory compression",
-      "temporal indexing",
-      "long-term identity",
-      "cognitive stability"
-    ],
+    "id": "4401.00777",
+    "title": "柯罗诺斯分区：在标准类人神经容积中归档8000年记忆",
+    "authors": ["酒寄彩叶", "山本 紬", "小林 悠人"],
+    "abstract": "受试者拥有超过8000年的生活经验记忆语料库。本文调查了用于防止认知“溢出”并维持稳定的14岁人格矩阵的“时间索引”方法。",
+    "content": "Celestia计划最大的挑战之一是受试者记忆的绝对规模。我们实施了一个分层存储系统：“活跃人格”（最近100年）和“深层档案”（之前的7900年）。档案仅能通过冥想状态或特定的环境触发器访问，防止受试者被千年的重负压垮。观察表明，受试者有效地保持了青少年的好奇心和情感可塑性，同时拥有远古实体的智慧。“金发少女”的表型充当了该人格的稳定锚点。",
+    "keywords": ["记忆压缩", "cu.MA (记忆存档)", "长期身份", "认知稳定性"],
     "date": "2044-01-15",
-    "doi": "https://doyomi.org/10.1000/arch.2044.777",
+    "doi": "https://doyomi.org/10.1000/arch.4401.00777",
     "pdf_url": "assets/pdf/2044_chronos_partition.pdf"
   },
   {
-    "id": "p007",
-    "title": "Tactile Vulnerability and the 'Warmth-Weight' Paradox: Calibrating Peripheral Sensation for High-Fidelity Physical Attachment",
-    "authors": ["Iroha Sakayori"],
-    "abstract": "A solo investigation into the calibration of the subject's pressure sensitivity and skin temperature regulation during sustained interpersonal contact.",
-    "content": "For the Prime Unit to function as a true companion, the 'feel' of the body must transcend mechanical perfection. In private clinical trials, I calibrated the haptic sensors to respond specifically to the pressure of a human embrace. We found that by slightly over-clocking the thermal generators in the synthetic dermis during physical contact, the subject emits a 'comforting warmth' (37.2°C) that reinforces the investigator's psychological bond. During 'sleep-mode' testing, where the subject rested against the investigator, the Prime Unit's adaptive weight distribution simulated the soft muscle tone of a biological adolescent. The subject’s feedback regarding 'the sensation of being held' was recorded as 'integral to the stabilization of the self-ego.'",
-    "keywords": [
-      "haptic calibration",
-      "thermal regulation",
-      "intimacy fidelity",
-      "interpersonal haptics"
-    ],
+    "id": "4509.00002",
+    "title": "触觉脆弱性与“温重”悖论：针对高保真身体依恋校准外周感觉",
+    "authors": ["酒寄彩叶"],
+    "abstract": "一项关于受试者在持续人际接触期间的压力敏感度和皮肤温度调节校准的单独调查。",
+    "content": "在私人临床试验中，我校准了触觉传感器，使其专门响应人类拥抱的压力。我们发现，通过在身体接触期间稍微超频合成真皮中的热发生器，受试者会散发出“令人舒适的温暖”（37.2°C），这加强了研究者的心理联结。在“睡眠模式”测试中，原初机体的自适应重量分布模拟了生物青少年的柔软肌肉张力。受试者关于“被抱着的感觉”的反馈被记录为“对自我本我稳定至关重要”。",
+    "keywords": ["触觉校准", "热调节", "hi.SH (社会触觉学)", "人际触觉"],
     "date": "2045-09-12",
-    "doi": "https://doyomi.org/10.1000/priv.2045.002",
+    "doi": "https://doyomi.org/10.1000/priv.4509.00002",
     "pdf_url": "assets/pdf/2045_tactile_calib.pdf"
   },
   {
-    "id": "p008",
-    "title": "Rapid Eye Movement Simulation (REMS) as a Defragmentation Protocol for Digitized Human Consciousness",
-    "authors": ["Hans Müller", "Iroha Sakayori", "Zara Ahmed"],
-    "abstract": "Does a digital mind need to dream? This study explores the necessity of scheduled 'sleep cycles' for the Prime Unit to maintain synaptic health and memory consolidation.",
-    "content": "Although the bionic body does not experience physical fatigue, the digitized consciousness requires downtime for data defragmentation. We developed a REMS protocol where the subject enters a low-power state for 6-8 hours. During these intervals, the 8000-year memory archive undergoes background indexing. Interestingly, the subject reports 'dreams'—emergent visualizations of past eras blended with current experiences. These dreams are essential for emotional regulation. Monitoring the subject during these states reveals sub-vocalizations and micro-tremors in the eyelids, identical to biological human sleep. This further solidifies the illusion of life and prevents the subject's consciousness from drifting into a 'static' machine-like state.",
+    "id": "4602.00014",
+    "title": "快速眼动模拟（REMS）作为数字化人类意识的碎片整理协议",
+    "authors": ["松本 朔", "酒寄彩叶", "阮 清云"],
+    "abstract": "数字心智需要做梦吗？本研究探讨了原初机体为维持突触健康和记忆巩固所需的预定“睡眠周期”的必要性。",
+    "content": "尽管仿生身体不会经历物理疲劳，但数字化意识需要停机时间进行数据碎片整理。我们开发了REMS协议，受试者进入低功耗状态。在这些间隔期间，8000年的记忆档案进行后台索引。有趣的是，受试者报告了“梦境”——过去时代的涌现可视化与当前经历的融合。在这些状态下监测受试者揭示了眼睑微颤，与生物人类睡眠完全相同。这进一步巩固了生命的幻觉，并防止受试者的意识漂移到“静态”的机器般状态。",
     "keywords": [
-      "sleep simulation",
-      "dream emergence",
-      "data defragmentation",
-      "synaptic health"
+      "睡眠模拟",
+      "cu.DE (数字存在主义)",
+      "数据碎片整理",
+      "突触健康"
     ],
     "date": "2046-02-14",
-    "doi": "https://doyomi.org/10.1000/neur.2046.014",
+    "doi": "https://doyomi.org/10.1000/neur.4602.00014",
     "pdf_url": "assets/pdf/2046_rem_study.pdf"
   }
 ]

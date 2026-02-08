@@ -48,13 +48,21 @@
       .replace(/>/g, '&gt;');
   }
 
+  const MONTH_NAMES = ['January', 'February', 'March', 'April', 'May', 'June',
+    'July', 'August', 'September', 'October', 'November', 'December'];
+
   function formatDate(s) {
     if (!s) return '';
     const d = new Date(s);
     if (isNaN(d.getTime())) return s;
-    const months = ['January', 'February', 'March', 'April', 'May', 'June',
-      'July', 'August', 'September', 'October', 'November', 'December'];
-    return d.getDate() + ' ' + months[d.getMonth()] + ', ' + d.getFullYear();
+    return d.getDate() + ' ' + MONTH_NAMES[d.getMonth()] + ', ' + d.getFullYear();
+  }
+
+  function formatMonthYear(s) {
+    if (!s) return '';
+    const d = new Date(s);
+    if (isNaN(d.getTime())) return '';
+    return MONTH_NAMES[d.getMonth()] + ', ' + d.getFullYear();
   }
 
   function renderResultItem(paper, startIndex) {
@@ -90,7 +98,7 @@
     html += ' <a href="' + detailUrl + '">▽ More</a></p>';
     html += '<div class="submission-history">';
     html += '<span class="meta-label">Submitted</span> ' + escapeHtml(formatDate(paper.date)) + '; ';
-    html += '<span class="meta-label">originally announced</span> ' + (paper.date ? paper.date.slice(0, 7).replace(/-/, ' ') : '') + '.';
+    html += '<span class="meta-label">Originally announced</span> ' + escapeHtml(formatMonthYear(paper.date)) + '.';
     html += '</div>';
     html += '</li>';
     return html;
@@ -162,7 +170,7 @@
         if (paginationBottomEl) paginationBottomEl.innerHTML = paginationHtml;
       })
       .catch(function () {
-        listEl.innerHTML = '<li class="loading">加载失败，请稍后重试。</li>';
+        listEl.innerHTML = '<li class="loading">加载失败</li>';
         var paginationEl = document.getElementById(PAGINATION_ID);
         var paginationBottomEl = document.getElementById(PAGINATION_BOTTOM_ID);
         if (paginationEl) paginationEl.innerHTML = '';
