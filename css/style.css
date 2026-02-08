@@ -1,10 +1,10 @@
 /****************************************
- * 论文归档站 · 样式对齐 .stylereference
- * 参考: arXiv.css, browse_search.css, abs.css, arXiv-print.css
+ * 论文归档站 · 全局样式
+ * 参考：arXiv.css, browse_search.css, abs.css, arXiv-print.css
  ****************************************/
 
 /****************************************
- *  General (arXiv.css)
+ *  全局基础
  ****************************************/
 body {
   margin: 0;
@@ -49,8 +49,7 @@ img {
 }
 
 /****************************************
- *  Cornell Identity / 顶部黑条 (桌面约 73px，徽标与校名更大)
- *  参考: #cu-identity, #cu-logo, #insignia-link 等
+ *  顶部黑条（桌面显示：校徽 + 校名 + 致谢）
  ****************************************/
 .header-top {
   font-family: verdana, arial, helvetica, sans-serif;
@@ -92,7 +91,7 @@ img {
 }
 
 /****************************************
- *  arXiv Masthead / 红色条 (arXiv.css #header, .mobile-header)
+ *  红色顶栏（logo、校徽校名、搜索、菜单）
  ****************************************/
 .header-bottom {
   background-color: #b31b1b;
@@ -206,7 +205,7 @@ img {
   white-space: nowrap;
 }
 
-/* Masthead Search (browse_search.css + arXiv #header form) */
+/* 顶栏搜索框 */
 .header-search-box {
   display: flex;
   justify-content: flex-end;
@@ -271,7 +270,7 @@ img {
 }
 
 /****************************************
- *  Main content (arXiv.css #content)
+ *  首页主内容区
  ****************************************/
 .main-container {
   margin: 0.7em;
@@ -290,7 +289,7 @@ h1.page-title {
 }
 
 /****************************************
- *  Pagination
+ *  分页
  ****************************************/
 .pagination {
   display: flex;
@@ -334,7 +333,7 @@ h1.page-title {
 }
 
 /****************************************
- *  List / dlpage (arXiv.css #dlpage)
+ *  论文列表项
  ****************************************/
 .results-list {
   list-style: none;
@@ -424,7 +423,7 @@ h1.page-title {
   font-weight: bold;
 }
 
-/* Loading / error */
+/* 加载中 / 错误态 */
 .loading {
   font-style: italic;
   color: #555;
@@ -455,7 +454,7 @@ h1.page-title {
 }
 
 /****************************************
- *  Detail / abs 布局 (arXiv.css #abs-outer, abs.css)
+ *  详情页布局（主栏 + 侧栏）
  ****************************************/
 .content-wrapper {
   margin: -0.7em;
@@ -464,7 +463,7 @@ h1.page-title {
   margin-left: auto;
   margin-right: auto;
   padding: 1.5em 20px 0;
-  overflow: auto; /* contain floats */
+  overflow: auto;
 }
 
 .main-column {
@@ -491,7 +490,7 @@ h1.page-title {
   color: #333;
 }
 
-/* abs.css #abs h1.title */
+/* 详情页文章标题 */
 h1.paper-title {
   display: block;
   font-size: 1.8em !important;
@@ -500,7 +499,7 @@ h1.paper-title {
   line-height: 120%;
 }
 
-/* abs.css #abs .authors */
+/* 详情页作者行 */
 .detail-authors {
   font-size: 1.2em;
   line-height: 24px;
@@ -511,7 +510,7 @@ h1.paper-title {
   font-size: medium;
 }
 
-/* abs.css #abs blockquote.abstract；左端与标题、作者对齐（20px），背景透明 */
+/* 摘要块：与标题/作者左对齐 20px，背景透明 */
 .abstract-block {
   font-size: 1.05em;
   line-height: 1.55;
@@ -531,7 +530,7 @@ h1.paper-title {
   text-align: justify;
 }
 
-/* abs.css #abs .metatable, .tablecell */
+/* 详情页元数据表格 */
 .metatable {
   font-size: 0.95em !important;
   line-height: 1.5;
@@ -553,7 +552,7 @@ h1.paper-title {
   width: 100px;
 }
 
-/* Sidebar blocks (arXiv.css .full-text, .browse) */
+/* 侧栏各个区块 */
 .sidebar-box {
   margin-bottom: 0;
   padding: 0.5em 1em 0.5em 0;
@@ -615,7 +614,7 @@ h1.paper-title {
   padding: 0.2em 0 0 0;
 }
 
-/* Submission history (arXiv.css #abs-outer .submission-history) */
+/* 详情页 Submission history 区块 */
 .submission-history-block {
   margin: 1.5em 0 1.5em 20px;
   font-size: 90%;
@@ -638,7 +637,7 @@ h1.paper-title {
 }
 
 /****************************************
- *  Footer (arXiv.css footer)
+ *  页脚
  ****************************************/
 footer {
   background-color: hsl(0, 0%, 95%);
@@ -715,9 +714,7 @@ footer ul {
 }
 
 /****************************************
- *  Responsive: 768px 平板 — 黑条消失，红条内 logo | 竖线 | 校徽+校名
- *  黑条消失断点：视口宽度 ≤768px 时 .header-top 隐藏（见下）
- *  参考: .mobile-header 显示、#cu-identity 在实站被隐藏
+ *  响应式：≤768px 平板（隐藏黑条，红条内 logo | 竖线 | 校徽+校名）
  ****************************************/
 @media screen and (max-width: 768px) {
   .header-top {
@@ -755,8 +752,7 @@ footer ul {
 }
 
 /****************************************
- *  Responsive: 500px 手机 — 红条仅保留：arXiv | 校徽 | 搜索 | 菜单
- *  参考: .mobile-header @500px 列高 80px、logo-cornell 校徽、nav 菜单
+ *  响应式：≤500px 手机（红条仅：logo 图 | 校徽 | 搜索 | 菜单）
  ****************************************/
 @media screen and (max-width: 500px) {
   .header-bottom {
@@ -830,7 +826,7 @@ footer ul {
 }
 
 /****************************************
- *  Responsive: 768px 继续 — 主内容、详情、footer
+ *  响应式：≤768px 主内容、详情、侧栏、页脚
  ****************************************/
 @media screen and (max-width: 768px) {
   .header-bottom .logo {
@@ -856,7 +852,7 @@ footer ul {
     margin: 0 10px 5px 0;
   }
 
-  /* Detail: abs-outer mobile */
+  /* 详情页窄屏布局 */
   .content-wrapper {
     margin: 0;
     padding: 1.5em 1em 0;
@@ -928,7 +924,7 @@ footer ul {
     font-size: 1em;
   }
 
-  /* Mobile download button style (arXiv abs mobile) */
+  /* 窄屏侧栏下载按钮样式 */
   .sidebar .download-btn {
     display: flex;
     justify-content: center;
@@ -961,8 +957,8 @@ footer ul {
 }
 
 /****************************************
- *  Print (arXiv-print.css)
- *****************************************/
+ *  打印样式
+ ****************************************/
 @media print {
   .header-top,
   .header-search-box,
