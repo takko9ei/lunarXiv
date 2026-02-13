@@ -11,14 +11,14 @@ A static, arXiv-style paper archive created as fanwork for **「超かぐや姫�
 ### English
 
 - **Browse** — Open the site and scroll the list. Use pagination at the top and bottom to switch pages.
-- **View details** — Click a paper’s **ID** (e.g. `lunar-2401.00001`) or the **▽ More** link to open its detail page (title, authors, abstract, metadata, submission history, and optional full content).
+- **View details** — Click a paper’s **ID** (e.g. `2401.00001`) or the **▽ More** link to open its detail page (title, authors, abstract, metadata, submission history, and optional full content).
 - **PDF** — On the list page, use the **pdf** link next to each paper to open or download the PDF. On the detail page, use the **Download PDF** button in the sidebar.
 - The site is static (HTML + CSS + JS, no backend). Data is loaded from `data/papers.json`. You can run it locally by opening `index.html` in a browser or using any static server (e.g. `npx serve`). Live demo: **https://takko9ei.github.io/lunarXiv/**
 
 ### 中文
 
 - **浏览** — 打开站点后可在首页列表中浏览论文，通过顶部与底部的分页切换页码。
-- **查看详情** — 点击论文 **编号**（如 `lunar-2401.00001`）或 **▽ More** 进入详情页，可查看标题、作者、摘要、元数据、Submission history 及（若有）全文。
+- **查看详情** — 点击论文 **编号**（如 `2401.00001`）或 **▽ More** 进入详情页，可查看标题、作者、摘要、元数据、Submission history 及（若有）全文。
 - **PDF** — 在列表页使用每条论文旁的 **pdf** 链接可打开或下载 PDF；在详情页使用侧栏的 **Download PDF** 按钮。
 - 本站为纯静态（HTML + CSS + JS，无后端），数据来自 `data/papers.json`。本地可直接用浏览器打开 `index.html`，或使用静态服务器（如 `npx serve`）。在线访问：**https://takko9ei.github.io/lunarXiv/**
 
