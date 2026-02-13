@@ -54,18 +54,20 @@ If you would like to contribute a (pseudo-)paper: write and format it, then send
 
 ## Contact / 联系方式
 
-- **QQ:** 2575639107  
-- **小红书:** hifianatomia0107  
-- **Twitter:** ameato9ei  
-- **Email:** lzh310@outlook.com  
+- **QQ:** 2575639107
+- **小红书:** hifianatomia0107
+- **Twitter:** ameato9ei
+- **Email:** lzh310@outlook.com
 
 ---
 
 ## About Updates / 关于更新
 
 I plan to **keep updating** this project: adding new papers, improving the layout, and fixing issues as needed. The repository will be updated periodically. Star or watch the repo if you want to stay in the loop.
+TODO: Add English localization, transfer repo to lunarXiv168.github.io under organization lunarXiv168 created by me.
 
 我会 **持续更新** 本项目：补充新论文、优化页面与交互、修复问题等。仓库会不定期更新，如需关注可 Star 或 Watch 本仓库。
+下一步：添加英文适配；迁移页面至位于我创建的同名组织下的lunarXiv168.github.io，换取较好的辨识性。
 
 ---
 
